@@ -84,6 +84,15 @@ async def revoke_key(db: AsyncSession, key_id: str, user_id: str) -> bool:
         return True
     return False
 
+async def delete_key(db: AsyncSession, key_id: str, user_id: str) -> bool:
+    result = await db.execute(select(VirtualKey).where(VirtualKey.id == key_id, VirtualKey.user_id == user_id))
+    key = result.scalars().first()
+    if key:
+        await db.delete(key)
+        await db.commit()
+        return True
+    return False
+
 async def touch_key(db: AsyncSession, key_id: str) -> None:
     result = await db.execute(select(VirtualKey).where(VirtualKey.id == key_id))
     key = result.scalars().first()

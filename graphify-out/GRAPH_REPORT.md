@@ -1,16 +1,16 @@
 # Graph Report - sefaRoute  (2026-05-07)
 
 ## Corpus Check
-- 17 files · ~2,868 words
+- 17 files · ~2,898 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 123 nodes · 133 edges · 25 communities (16 shown, 9 thin omitted)
-- Extraction: 81% EXTRACTED · 19% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.68)
+- 124 nodes · 136 edges · 25 communities (16 shown, 9 thin omitted)
+- Extraction: 82% EXTRACTED · 18% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.68)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7c4fc770`
+- Built from commit: `d3887290`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -50,6 +50,8 @@
 10. `chat_completions` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `get_client()` --calls--> `decrypt()`  [INFERRED]
+  core/dispatcher.py → db/crud.py
 - `lifespan()` --calls--> `load_models()`  [INFERRED]
   main.py → core/router.py
 - `RegisterRequest` --uses--> `User`  [INFERRED]
@@ -58,8 +60,6 @@
   api/v1/auth.py → db/models.py
 - `UserPublic` --uses--> `User`  [INFERRED]
   api/v1/auth.py → db/models.py
-- `AuthResponse` --uses--> `User`  [INFERRED]
-  api/v1/auth.py → db/models.py
 
 ## Hyperedges (group relationships)
 - **Authentication Flow** — auth_register, auth_login, auth_me, dependencies_get_current_user, jwt_handler_create_token, jwt_handler_decode_token [INFERRED 0.80]
@@ -67,36 +67,36 @@
 ## Communities (25 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.14
-Nodes (10): get_current_user(), get_virtual_key(), Extracts the Bearer token natively from the Authorization header,     validates, Validates API requests using the lmr-xxx format.     Used ONLY for the /v1/chat/, create_user(), create_virtual_key(), encrypt(), get_key_by_hash() (+2 more)
-
-### Community 1 - "Community 1"
 Cohesion: 0.24
 Nodes (9): BaseModel, User, AuthResponse, LoginRequest, RegisterRequest, UserPublic, KeyCreateRequest, KeyCreateResponse (+1 more)
 
-### Community 2 - "Community 2"
+### Community 1 - "Community 1"
 Cohesion: 0.16
-Nodes (10): dispatch_stream(), dispatch_sync(), get_client(), extract_features(), get_feature_vector(), load_models(), route_prompt(), decrypt() (+2 more)
+Nodes (8): get_virtual_key(), Validates API requests using the lmr-xxx format.     Used ONLY for the /v1/chat/, create_user(), decrypt(), encrypt(), get_fernet(), get_key_by_hash(), hash_key()
+
+### Community 2 - "Community 2"
+Cohesion: 0.18
+Nodes (9): dispatch_stream(), dispatch_sync(), get_client(), extract_features(), get_feature_vector(), load_models(), route_prompt(), lifespan() (+1 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.15
 Nodes (14): _estimate_cost, _log, chat_completions, decrypt, log_request, touch_key, dispatch_stream, dispatch_sync (+6 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.28
-Nodes (6): Base, log_request(), Base, RequestLog, VirtualKey, DeclarativeBase
+Cohesion: 0.24
+Nodes (7): Base, create_virtual_key(), log_request(), Base, RequestLog, VirtualKey, DeclarativeBase
 
 ### Community 5 - "Community 5"
+Cohesion: 0.22
+Nodes (7): get_current_user(), Extracts the Bearer token natively from the Authorization header,     validates, create_token(), decode_token(), get_user_by_id(), login(), register()
+
+### Community 6 - "Community 6"
 Cohesion: 0.4
 Nodes (3): capture_request(), _estimate_cost(), _log()
 
-### Community 6 - "Community 6"
+### Community 7 - "Community 7"
 Cohesion: 0.33
 Nodes (6): create_virtual_key, encrypt, get_key_by_hash, hash_key, get_virtual_key, create_key
-
-### Community 7 - "Community 7"
-Cohesion: 0.4
-Nodes (4): create_token(), decode_token(), login(), register()
 
 ### Community 8 - "Community 8"
 Cohesion: 0.5
@@ -122,9 +122,11 @@ Nodes (3): RequestLog, User, VirtualKey
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `decrypt()` connect `Community 2` to `Community 0`?**
-  _High betweenness centrality (0.127) - this node is a cross-community bridge._
-- **Why does `User` connect `Community 1` to `Community 0`, `Community 4`?**
+- **Why does `decrypt()` connect `Community 1` to `Community 2`?**
+  _High betweenness centrality (0.128) - this node is a cross-community bridge._
+- **Why does `get_client()` connect `Community 2` to `Community 1`?**
+  _High betweenness centrality (0.125) - this node is a cross-community bridge._
+- **Why does `User` connect `Community 0` to `Community 1`, `Community 4`?**
   _High betweenness centrality (0.120) - this node is a cross-community bridge._
 - **Are the 9 inferred relationships involving `User` (e.g. with `RegisterRequest` and `LoginRequest`) actually correct?**
   _`User` has 9 INFERRED edges - model-reasoned connections that need verification._
@@ -134,5 +136,3 @@ _Questions this graph is uniquely positioned to answer:_
   _`get_current_user()` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Extracts the Bearer token natively from the Authorization header,     validates`, `Validates API requests using the lmr-xxx format.     Used ONLY for the /v1/chat/`, `lifespan` to the rest of the system?**
   _30 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.14 - nodes in this community are weakly interconnected._

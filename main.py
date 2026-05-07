@@ -1,14 +1,20 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from sqlalchemy import text
+from sqlalchemy.schema import CreateSchema
 
 from api.v1 import auth, keys, chat, analytics
 from core.router import load_models, CLASSIFIER
-from db.database import engine, Base
+from db.database import engine, Base, DB_SCHEMA
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     async with engine.begin() as conn:
+        if DB_SCHEMA:
+            await conn.execute(CreateSchema(DB_SCHEMA, if_not_exists=True))
+            # Execute SET search_path without parameter binding which fails in asyncpg/PostgreSQL
+            await conn.execute(text(f"SET search_path TO {DB_SCHEMA}"))
         await conn.run_sync(Base.metadata.create_all)
     load_models()
     yield

@@ -5,9 +5,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# We need to construct the database URL, checking the env var.
+# Prefer an async driver for SQLAlchemy's async engine.
+raw_database_url = os.getenv("DATABASE_URL")
+if raw_database_url:
+    if raw_database_url.startswith("postgres://"):
+        raw_database_url = raw_database_url.replace("postgres://", "postgresql+asyncpg://", 1)
+    elif raw_database_url.startswith("postgresql://") and "+asyncpg" not in raw_database_url:
+        raw_database_url = raw_database_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
 # Default to a local dev DB if missing for safety during dev.
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:postgres@localhost:5432/postgres")
+DATABASE_URL = raw_database_url or "postgresql+asyncpg://postgres:postgres@localhost:5432/postgres"
 DB_SCHEMA = os.getenv("DB_SCHEMA")
 
 connect_args = {}

@@ -84,3 +84,12 @@ async def revoke_key(
 ):
     success = await crud.revoke_key(db, key_id=payload.key_id, user_id=current_user.id)
     return {"success": success}
+
+@router.delete("/{key_id}")
+async def delete_key(
+    key_id: str,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    success = await crud.delete_key(db, key_id=key_id, user_id=current_user.id)
+    return {"success": success}
