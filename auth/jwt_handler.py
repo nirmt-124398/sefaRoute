@@ -6,7 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = os.getenv("JWT_SECRET", "placeholder_secret_min_32_chars_for_local_dev")
+SECRET_KEY = os.getenv("JWT_SECRET")
+if not SECRET_KEY:
+    raise RuntimeError("JWT_SECRET is not set")
 ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
 EXPIRE_DAYS = int(os.getenv("JWT_EXPIRE_DAYS", "30"))
 

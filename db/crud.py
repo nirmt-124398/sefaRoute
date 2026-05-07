@@ -7,16 +7,17 @@ from sqlalchemy import select
 from cryptography.fernet import Fernet
 from db.models import User, VirtualKey, RequestLog
 
-encryption_key = os.getenv("ENCRYPTION_KEY")
-if not encryption_key:
-    raise RuntimeError("ENCRYPTION_KEY is not set")
-fernet = Fernet(encryption_key.encode())
+def get_fernet() -> Fernet:
+    encryption_key = os.getenv("ENCRYPTION_KEY")
+    if not encryption_key:
+        raise RuntimeError("ENCRYPTION_KEY is not set")
+    return Fernet(encryption_key.encode())
 
 def encrypt(val: str) -> str:
-    return fernet.encrypt(val.encode()).decode()
+    return get_fernet().encrypt(val.encode()).decode()
 
 def decrypt(val: str) -> str:
-    return fernet.decrypt(val.encode()).decode()
+    return get_fernet().decrypt(val.encode()).decode()
 
 def hash_key(key: str) -> str:
     return hashlib.sha256(key.encode()).hexdigest()

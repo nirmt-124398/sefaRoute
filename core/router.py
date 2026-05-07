@@ -1,3 +1,4 @@
+import os
 import pickle
 import numpy as np
 from core.feature_extractor import get_feature_vector
@@ -10,9 +11,13 @@ TIER_NAMES = {0: "weak", 1: "mid", 2: "strong"}
 def load_models():
     # Called once at startup
     global CLASSIFIER, REGRESSOR
-    with open("core/models/router_classifier.pkl", "rb") as f:
+    classifier_path = "core/models/router_classifier.pkl"
+    regressor_path = "core/models/router_regressor.pkl"
+    if not os.path.exists(classifier_path) or not os.path.exists(regressor_path):
+        raise RuntimeError("Model files missing in core/models")
+    with open(classifier_path, "rb") as f:
         CLASSIFIER = pickle.load(f)
-    with open("core/models/router_regressor.pkl", "rb") as f:
+    with open(regressor_path, "rb") as f:
         REGRESSOR = pickle.load(f)
 
 def route_prompt(prompt: str) -> dict:
