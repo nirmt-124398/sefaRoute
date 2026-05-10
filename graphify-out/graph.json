@@ -35,7 +35,7 @@
       "label": "lifespan()",
       "file_type": "code",
       "source_file": "main.py",
-      "source_location": "L10",
+      "source_location": "L12",
       "id": "sefaroute_main_lifespan",
       "community": 2,
       "norm_label": "lifespan()"
@@ -44,7 +44,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "main.py",
-      "source_location": "L30",
+      "source_location": "L36",
       "id": "sefaroute_main_health",
       "community": 2,
       "norm_label": "health()"
@@ -109,7 +109,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L1",
       "id": "api_v1_auth_py",
-      "community": 0,
+      "community": 1,
       "norm_label": "auth.py"
     },
     {
@@ -118,7 +118,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L14",
       "id": "v1_auth_registerrequest",
-      "community": 0,
+      "community": 1,
       "norm_label": "registerrequest"
     },
     {
@@ -127,7 +127,7 @@
       "source_file": "",
       "source_location": "",
       "id": "basemodel",
-      "community": 0,
+      "community": 1,
       "norm_label": "basemodel"
     },
     {
@@ -136,7 +136,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L19",
       "id": "v1_auth_loginrequest",
-      "community": 0,
+      "community": 1,
       "norm_label": "loginrequest"
     },
     {
@@ -145,7 +145,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L23",
       "id": "v1_auth_userpublic",
-      "community": 0,
+      "community": 1,
       "norm_label": "userpublic"
     },
     {
@@ -154,7 +154,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L28",
       "id": "v1_auth_authresponse",
-      "community": 0,
+      "community": 1,
       "norm_label": "authresponse"
     },
     {
@@ -163,7 +163,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L33",
       "id": "v1_auth_register",
-      "community": 5,
+      "community": 4,
       "norm_label": "register()"
     },
     {
@@ -172,7 +172,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L59",
       "id": "v1_auth_login",
-      "community": 5,
+      "community": 4,
       "norm_label": "login()"
     },
     {
@@ -181,7 +181,7 @@
       "source_file": "api/v1/auth.py",
       "source_location": "L79",
       "id": "v1_auth_me",
-      "community": 0,
+      "community": 1,
       "norm_label": "me()"
     },
     {
@@ -226,7 +226,7 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L1",
       "id": "api_v1_keys_py",
-      "community": 0,
+      "community": 1,
       "norm_label": "keys.py"
     },
     {
@@ -235,7 +235,7 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L12",
       "id": "v1_keys_keycreaterequest",
-      "community": 0,
+      "community": 1,
       "norm_label": "keycreaterequest"
     },
     {
@@ -244,7 +244,7 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L24",
       "id": "v1_keys_keycreateresponse",
-      "community": 0,
+      "community": 1,
       "norm_label": "keycreateresponse"
     },
     {
@@ -253,7 +253,7 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L29",
       "id": "v1_keys_keyrevokerequest",
-      "community": 0,
+      "community": 1,
       "norm_label": "keyrevokerequest"
     },
     {
@@ -262,7 +262,7 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L33",
       "id": "v1_keys_create_key",
-      "community": 0,
+      "community": 1,
       "norm_label": "create_key()"
     },
     {
@@ -271,7 +271,7 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L60",
       "id": "v1_keys_list_keys",
-      "community": 0,
+      "community": 1,
       "norm_label": "list_keys()"
     },
     {
@@ -280,8 +280,17 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L80",
       "id": "v1_keys_revoke_key",
-      "community": 0,
+      "community": 1,
       "norm_label": "revoke_key()"
+    },
+    {
+      "label": "delete_key()",
+      "file_type": "code",
+      "source_file": "api/v1/keys.py",
+      "source_location": "L89",
+      "id": "v1_keys_delete_key",
+      "community": 1,
+      "norm_label": "delete_key()"
     },
     {
       "label": "dependencies.py",
@@ -289,7 +298,7 @@
       "source_file": "auth/dependencies.py",
       "source_location": "L1",
       "id": "auth_dependencies_py",
-      "community": 5,
+      "community": 4,
       "norm_label": "dependencies.py"
     },
     {
@@ -298,7 +307,7 @@
       "source_file": "auth/dependencies.py",
       "source_location": "L8",
       "id": "auth_dependencies_get_current_user",
-      "community": 5,
+      "community": 4,
       "norm_label": "get_current_user()"
     },
     {
@@ -307,7 +316,7 @@
       "source_file": "auth/dependencies.py",
       "source_location": "L43",
       "id": "auth_dependencies_get_virtual_key",
-      "community": 1,
+      "community": 0,
       "norm_label": "get_virtual_key()"
     },
     {
@@ -316,7 +325,7 @@
       "source_file": "auth/dependencies.py",
       "source_location": "L12",
       "id": "auth_dependencies_rationale_12",
-      "community": 5,
+      "community": 4,
       "norm_label": "extracts the bearer token natively from the authorization header,     validates"
     },
     {
@@ -325,7 +334,7 @@
       "source_file": "auth/dependencies.py",
       "source_location": "L47",
       "id": "auth_dependencies_rationale_47",
-      "community": 1,
+      "community": 0,
       "norm_label": "validates api requests using the lmr-xxx format.     used only for the /v1/chat/"
     },
     {
@@ -334,7 +343,7 @@
       "source_file": "auth/jwt_handler.py",
       "source_location": "L1",
       "id": "auth_jwt_handler_py",
-      "community": 5,
+      "community": 4,
       "norm_label": "jwt_handler.py"
     },
     {
@@ -343,7 +352,7 @@
       "source_file": "auth/jwt_handler.py",
       "source_location": "L15",
       "id": "auth_jwt_handler_create_token",
-      "community": 5,
+      "community": 4,
       "norm_label": "create_token()"
     },
     {
@@ -352,7 +361,7 @@
       "source_file": "auth/jwt_handler.py",
       "source_location": "L22",
       "id": "auth_jwt_handler_decode_token",
-      "community": 5,
+      "community": 4,
       "norm_label": "decode_token()"
     },
     {
@@ -451,7 +460,7 @@
       "source_file": "db/crud.py",
       "source_location": "L1",
       "id": "db_crud_py",
-      "community": 1,
+      "community": 0,
       "norm_label": "crud.py"
     },
     {
@@ -460,7 +469,7 @@
       "source_file": "db/crud.py",
       "source_location": "L10",
       "id": "db_crud_get_fernet",
-      "community": 1,
+      "community": 0,
       "norm_label": "get_fernet()"
     },
     {
@@ -469,7 +478,7 @@
       "source_file": "db/crud.py",
       "source_location": "L16",
       "id": "db_crud_encrypt",
-      "community": 1,
+      "community": 0,
       "norm_label": "encrypt()"
     },
     {
@@ -478,7 +487,7 @@
       "source_file": "db/crud.py",
       "source_location": "L19",
       "id": "db_crud_decrypt",
-      "community": 1,
+      "community": 0,
       "norm_label": "decrypt()"
     },
     {
@@ -487,7 +496,7 @@
       "source_file": "db/crud.py",
       "source_location": "L22",
       "id": "db_crud_hash_key",
-      "community": 1,
+      "community": 0,
       "norm_label": "hash_key()"
     },
     {
@@ -496,7 +505,7 @@
       "source_file": "db/crud.py",
       "source_location": "L25",
       "id": "db_crud_create_user",
-      "community": 1,
+      "community": 0,
       "norm_label": "create_user()"
     },
     {
@@ -505,7 +514,7 @@
       "source_file": "db/crud.py",
       "source_location": "L32",
       "id": "db_crud_get_user_by_email",
-      "community": 1,
+      "community": 0,
       "norm_label": "get_user_by_email()"
     },
     {
@@ -514,7 +523,7 @@
       "source_file": "db/crud.py",
       "source_location": "L36",
       "id": "db_crud_get_user_by_id",
-      "community": 5,
+      "community": 4,
       "norm_label": "get_user_by_id()"
     },
     {
@@ -523,7 +532,7 @@
       "source_file": "db/crud.py",
       "source_location": "L40",
       "id": "db_crud_create_virtual_key",
-      "community": 4,
+      "community": 0,
       "norm_label": "create_virtual_key()"
     },
     {
@@ -532,7 +541,7 @@
       "source_file": "db/crud.py",
       "source_location": "L70",
       "id": "db_crud_get_key_by_hash",
-      "community": 1,
+      "community": 0,
       "norm_label": "get_key_by_hash()"
     },
     {
@@ -541,7 +550,7 @@
       "source_file": "db/crud.py",
       "source_location": "L74",
       "id": "db_crud_list_keys",
-      "community": 1,
+      "community": 0,
       "norm_label": "list_keys()"
     },
     {
@@ -550,43 +559,52 @@
       "source_file": "db/crud.py",
       "source_location": "L78",
       "id": "db_crud_revoke_key",
-      "community": 1,
+      "community": 0,
       "norm_label": "revoke_key()"
+    },
+    {
+      "label": "delete_key()",
+      "file_type": "code",
+      "source_file": "db/crud.py",
+      "source_location": "L87",
+      "id": "db_crud_delete_key",
+      "community": 0,
+      "norm_label": "delete_key()"
     },
     {
       "label": "touch_key()",
       "file_type": "code",
       "source_file": "db/crud.py",
-      "source_location": "L87",
+      "source_location": "L96",
       "id": "db_crud_touch_key",
-      "community": 1,
+      "community": 0,
       "norm_label": "touch_key()"
     },
     {
       "label": "log_request()",
       "file_type": "code",
       "source_file": "db/crud.py",
-      "source_location": "L94",
+      "source_location": "L103",
       "id": "db_crud_log_request",
-      "community": 4,
+      "community": 5,
       "norm_label": "log_request()"
     },
     {
       "label": "get_stats()",
       "file_type": "code",
       "source_file": "db/crud.py",
-      "source_location": "L101",
+      "source_location": "L110",
       "id": "db_crud_get_stats",
-      "community": 1,
+      "community": 0,
       "norm_label": "get_stats()"
     },
     {
       "label": "get_request_logs()",
       "file_type": "code",
       "source_file": "db/crud.py",
-      "source_location": "L156",
+      "source_location": "L165",
       "id": "db_crud_get_request_logs",
-      "community": 1,
+      "community": 0,
       "norm_label": "get_request_logs()"
     },
     {
@@ -595,16 +613,16 @@
       "source_file": "db/database.py",
       "source_location": "L1",
       "id": "db_database_py",
-      "community": 4,
+      "community": 5,
       "norm_label": "database.py"
     },
     {
       "label": "Base",
       "file_type": "code",
       "source_file": "db/database.py",
-      "source_location": "L25",
+      "source_location": "L32",
       "id": "db_database_base",
-      "community": 4,
+      "community": 5,
       "norm_label": "base"
     },
     {
@@ -613,16 +631,16 @@
       "source_file": "",
       "source_location": "",
       "id": "declarativebase",
-      "community": 4,
+      "community": 5,
       "norm_label": "declarativebase"
     },
     {
       "label": "get_db()",
       "file_type": "code",
       "source_file": "db/database.py",
-      "source_location": "L28",
+      "source_location": "L35",
       "id": "db_database_get_db",
-      "community": 4,
+      "community": 5,
       "norm_label": "get_db()"
     },
     {
@@ -631,7 +649,7 @@
       "source_file": "db/models.py",
       "source_location": "L1",
       "id": "db_models_py",
-      "community": 4,
+      "community": 5,
       "norm_label": "models.py"
     },
     {
@@ -640,7 +658,7 @@
       "source_file": "db/models.py",
       "source_location": "L7",
       "id": "db_models_user",
-      "community": 0,
+      "community": 1,
       "norm_label": "user"
     },
     {
@@ -649,7 +667,7 @@
       "source_file": "",
       "source_location": "",
       "id": "base",
-      "community": 4,
+      "community": 5,
       "norm_label": "base"
     },
     {
@@ -658,7 +676,7 @@
       "source_file": "db/models.py",
       "source_location": "L16",
       "id": "db_models_virtualkey",
-      "community": 4,
+      "community": 5,
       "norm_label": "virtualkey"
     },
     {
@@ -667,7 +685,7 @@
       "source_file": "db/models.py",
       "source_location": "L40",
       "id": "db_models_requestlog",
-      "community": 4,
+      "community": 5,
       "norm_label": "requestlog"
     },
     {
@@ -1733,6 +1751,16 @@
       "target": "v1_keys_revoke_key"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/keys.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "api_v1_keys_py",
+      "target": "v1_keys_delete_key",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "api/v1/keys.py",
@@ -1997,9 +2025,9 @@
       "source_file": "db/crud.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "db_crud_py",
-      "target": "db_crud_get_fernet",
-      "confidence_score": 1.0
+      "target": "db_crud_get_fernet"
     },
     {
       "relation": "contains",
@@ -2105,6 +2133,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "db/crud.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "db_crud_py",
+      "target": "db_crud_delete_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "db/crud.py",
       "source_location": "L86",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2148,9 +2186,9 @@
       "source_file": "db/crud.py",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "db_crud_encrypt",
-      "target": "db_crud_get_fernet",
-      "confidence_score": 1.0
+      "target": "db_crud_get_fernet"
     },
     {
       "relation": "calls",
@@ -2159,9 +2197,9 @@
       "source_file": "db/crud.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "db_crud_decrypt",
-      "target": "db_crud_get_fernet",
-      "confidence_score": 1.0
+      "target": "db_crud_get_fernet"
     },
     {
       "relation": "calls",
@@ -2737,5 +2775,5 @@
       "source_file": "api/v1/auth.py"
     }
   ],
-  "built_at_commit": "d38872909b64f154047d56b8c4fb41c12937a69a"
+  "built_at_commit": "1ac6e4f74f9b660b4910e833ef7f2197115b19f1"
 }
