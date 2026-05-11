@@ -170,3 +170,40 @@ async def get_request_logs(db: AsyncSession, user_id: str, key_id: str = None, l
     query = query.order_by(RequestLog.created_at.desc()).limit(limit).offset(offset)
     result = await db.execute(query)
     return list(result.scalars().all())
+
+
+async def list_users(db: AsyncSession, skip: int = 0, limit: int = 100) -> list[User]:
+    result = await db.execute(select(User).offset(skip).limit(limit))
+    return list(result.scalars().all())
+
+
+async def update_user(
+    db: AsyncSession,
+    user_id: str,
+    username: str | None = None,
+    email: str | None = None,
+    password_hash: str | None = None,
+) -> User | None:
+    result = await db.execute(select(User).where(User.id == user_id))
+    user = result.scalars().first()
+    if not user:
+        return None
+    if username is not None:
+        user.username = username
+    if email is not None:
+        user.email = email
+    if password_hash is not None:
+        user.password_hash = password_hash
+    await db.commit()
+    await db.refresh(user)
+    return user
+
+
+async def delete_user_by_id(db: AsyncSession, user_id: str) -> bool:
+    result = await db.execute(select(User).where(User.id == user_id))
+    user = result.scalars().first()
+    if not user:
+        return False
+    await db.delete(user)
+    await db.commit()
+    return True

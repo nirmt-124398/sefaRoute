@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from auth.jwt_handler import create_token
 from auth.password import hash_password, verify_password
+from core.dependencies import rate_limit_auth
 from auth.dependencies import get_current_user
 from db.database import get_db
 from db.models import User
@@ -30,7 +31,11 @@ class AuthResponse(BaseModel):
     user: UserPublic
 
 @router.post("/register", response_model=AuthResponse)
-async def register(payload: RegisterRequest, db: AsyncSession = Depends(get_db)):
+async def register(
+    payload: RegisterRequest,
+    db: AsyncSession = Depends(get_db),
+    _: bool = Depends(rate_limit_auth),
+):
     existing = await crud.get_user_by_email(db, payload.email)
     if existing:
         raise HTTPException(
@@ -56,7 +61,11 @@ async def register(payload: RegisterRequest, db: AsyncSession = Depends(get_db))
     }
 
 @router.post("/login", response_model=AuthResponse)
-async def login(payload: LoginRequest, db: AsyncSession = Depends(get_db)):
+async def login(
+    payload: LoginRequest,
+    db: AsyncSession = Depends(get_db),
+    _: bool = Depends(rate_limit_auth),
+):
     user = await crud.get_user_by_email(db, payload.email)
     if not user or not verify_password(payload.password, user.password_hash):
         raise HTTPException(

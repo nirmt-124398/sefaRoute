@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from sqlalchemy import text
 from sqlalchemy.schema import CreateSchema
 
-from api.v1 import auth, keys, chat, analytics
+from api.v1 import auth, keys, chat, analytics, users
 from core.router import load_models, CLASSIFIER
 from db.database import engine, Base, DB_SCHEMA
 
@@ -30,6 +30,7 @@ app.include_router(auth.router, prefix="/auth", tags=["Auth"])
 app.include_router(keys.router, prefix="/keys", tags=["Keys"])
 app.include_router(chat.router, prefix="/v1", tags=["Chat"])
 app.include_router(analytics.router, prefix="/analytics", tags=["Analytics"])
+app.include_router(users.router, prefix="/users", tags=["Users"])
 
 
 @app.get("/health")

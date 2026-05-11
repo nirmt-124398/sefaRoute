@@ -11,6 +11,7 @@ from db.database import get_db
 from db.models import VirtualKey
 from db import crud
 from services.telemetry import capture_request
+from core.dependencies import rate_limit_chat
 
 router = APIRouter()
 
@@ -20,6 +21,7 @@ async def chat_completions(
     background_tasks: BackgroundTasks,
     virtual_key: VirtualKey = Depends(get_virtual_key),
     db: AsyncSession = Depends(get_db),
+    _: bool = Depends(rate_limit_chat),
 ):
     body = await request.json()
     messages = body.get("messages", [])
