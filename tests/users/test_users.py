@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import uuid
+
 import pytest
 
 from tests.helpers import api_call
@@ -39,6 +41,20 @@ async def test_users_update_self(jwt_headers, client):
         json_body={"username": "updated_test"},
     )
     assert call.status_code in {200, 422}
+
+
+@pytest.mark.integration
+@pytest.mark.asyncio
+async def test_users_delete_self(client):
+    reg = await client.post(
+        "/auth/register",
+        json={"email": f"selfdel_{uuid.uuid4().hex[:12]}@example.com", "username": "selfdel", "password": "Password123!"},
+    )
+    assert reg.status_code == 200
+    token = reg.json().get("token")
+    headers = {"Authorization": f"Bearer {token}"}
+    call = await api_call(client, "DELETE", "/users/me", headers=headers)
+    assert call.status_code == 204
 
 
 @pytest.mark.integration

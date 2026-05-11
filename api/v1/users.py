@@ -102,6 +102,14 @@ async def update_me(
     }
 
 
+@router.delete("/me", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_me(
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    await crud.delete_user_by_id(db, str(current_user.id))
+
+
 @router.delete("/{user_id}")
 async def delete_user(
     user_id: str,
