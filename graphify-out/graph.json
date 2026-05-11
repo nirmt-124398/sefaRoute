@@ -25,97 +25,97 @@
     {
       "label": "main.py",
       "file_type": "code",
-      "source_file": "main.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/main.py",
       "source_location": "L1",
-      "id": "main_py",
-      "community": 2,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_main_py",
+      "community": 4,
       "norm_label": "main.py"
     },
     {
       "label": "lifespan()",
       "file_type": "code",
-      "source_file": "main.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/main.py",
       "source_location": "L12",
       "id": "sefaroute_main_lifespan",
-      "community": 2,
+      "community": 4,
       "norm_label": "lifespan()"
     },
     {
       "label": "health()",
       "file_type": "code",
-      "source_file": "main.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/main.py",
       "source_location": "L36",
       "id": "sefaroute_main_health",
-      "community": 2,
+      "community": 4,
       "norm_label": "health()"
     },
     {
       "label": "__init__.py",
       "file_type": "code",
-      "source_file": "api/__init__.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/__init__.py",
       "source_location": "L1",
-      "id": "api_init_py",
-      "community": 17,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_api_init_py",
+      "community": 20,
       "norm_label": "__init__.py"
     },
     {
       "label": "__init__.py",
       "file_type": "code",
-      "source_file": "api/v1/__init__.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/__init__.py",
       "source_location": "L1",
-      "id": "api_v1_init_py",
-      "community": 18,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_api_v1_init_py",
+      "community": 21,
       "norm_label": "__init__.py"
     },
     {
       "label": "analytics.py",
       "file_type": "code",
-      "source_file": "api/v1/analytics.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/analytics.py",
       "source_location": "L1",
-      "id": "api_v1_analytics_py",
-      "community": 9,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_api_v1_analytics_py",
+      "community": 10,
       "norm_label": "analytics.py"
     },
     {
       "label": "summary()",
       "file_type": "code",
-      "source_file": "api/v1/analytics.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/analytics.py",
       "source_location": "L14",
       "id": "v1_analytics_summary",
-      "community": 9,
+      "community": 10,
       "norm_label": "summary()"
     },
     {
       "label": "requests()",
       "file_type": "code",
-      "source_file": "api/v1/analytics.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/analytics.py",
       "source_location": "L36",
       "id": "v1_analytics_requests",
-      "community": 9,
+      "community": 10,
       "norm_label": "requests()"
     },
     {
       "label": "daily()",
       "file_type": "code",
-      "source_file": "api/v1/analytics.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/analytics.py",
       "source_location": "L72",
       "id": "v1_analytics_daily",
-      "community": 9,
+      "community": 10,
       "norm_label": "daily()"
     },
     {
       "label": "auth.py",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L1",
-      "id": "api_v1_auth_py",
+      "id": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
       "community": 1,
       "norm_label": "auth.py"
     },
     {
       "label": "RegisterRequest",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L14",
       "id": "v1_auth_registerrequest",
       "community": 1,
@@ -133,7 +133,7 @@
     {
       "label": "LoginRequest",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L19",
       "id": "v1_auth_loginrequest",
       "community": 1,
@@ -142,7 +142,7 @@
     {
       "label": "UserPublic",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L23",
       "id": "v1_auth_userpublic",
       "community": 1,
@@ -151,7 +151,7 @@
     {
       "label": "AuthResponse",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L28",
       "id": "v1_auth_authresponse",
       "community": 1,
@@ -160,25 +160,25 @@
     {
       "label": "register()",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L33",
       "id": "v1_auth_register",
-      "community": 4,
+      "community": 1,
       "norm_label": "register()"
     },
     {
       "label": "login()",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L59",
       "id": "v1_auth_login",
-      "community": 4,
+      "community": 1,
       "norm_label": "login()"
     },
     {
       "label": "me()",
       "file_type": "code",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L79",
       "id": "v1_auth_me",
       "community": 1,
@@ -187,25 +187,25 @@
     {
       "label": "chat.py",
       "file_type": "code",
-      "source_file": "api/v1/chat.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/chat.py",
       "source_location": "L1",
-      "id": "api_v1_chat_py",
+      "id": "home_nirmit_desktop_saferoute_sefaroute_api_v1_chat_py",
       "community": 6,
       "norm_label": "chat.py"
     },
     {
       "label": "chat_completions()",
       "file_type": "code",
-      "source_file": "api/v1/chat.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/chat.py",
       "source_location": "L18",
       "id": "v1_chat_chat_completions",
-      "community": 2,
+      "community": 6,
       "norm_label": "chat_completions()"
     },
     {
       "label": "_log()",
       "file_type": "code",
-      "source_file": "api/v1/chat.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/chat.py",
       "source_location": "L91",
       "id": "v1_chat_log",
       "community": 6,
@@ -214,7 +214,7 @@
     {
       "label": "_estimate_cost()",
       "file_type": "code",
-      "source_file": "api/v1/chat.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/chat.py",
       "source_location": "L139",
       "id": "v1_chat_estimate_cost",
       "community": 6,
@@ -223,16 +223,16 @@
     {
       "label": "keys.py",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L1",
-      "id": "api_v1_keys_py",
-      "community": 1,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "community": 7,
       "norm_label": "keys.py"
     },
     {
       "label": "KeyCreateRequest",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L12",
       "id": "v1_keys_keycreaterequest",
       "community": 1,
@@ -241,232 +241,232 @@
     {
       "label": "KeyCreateResponse",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L24",
       "id": "v1_keys_keycreateresponse",
-      "community": 1,
+      "community": 7,
       "norm_label": "keycreateresponse"
     },
     {
       "label": "KeyRevokeRequest",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L29",
       "id": "v1_keys_keyrevokerequest",
-      "community": 1,
+      "community": 7,
       "norm_label": "keyrevokerequest"
     },
     {
       "label": "create_key()",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L33",
       "id": "v1_keys_create_key",
-      "community": 1,
+      "community": 7,
       "norm_label": "create_key()"
     },
     {
       "label": "list_keys()",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L60",
       "id": "v1_keys_list_keys",
-      "community": 1,
+      "community": 7,
       "norm_label": "list_keys()"
     },
     {
       "label": "revoke_key()",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L80",
       "id": "v1_keys_revoke_key",
-      "community": 1,
+      "community": 7,
       "norm_label": "revoke_key()"
     },
     {
       "label": "delete_key()",
       "file_type": "code",
-      "source_file": "api/v1/keys.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
       "source_location": "L89",
       "id": "v1_keys_delete_key",
-      "community": 1,
+      "community": 7,
       "norm_label": "delete_key()"
     },
     {
       "label": "dependencies.py",
       "file_type": "code",
-      "source_file": "auth/dependencies.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/dependencies.py",
       "source_location": "L1",
-      "id": "auth_dependencies_py",
-      "community": 4,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_auth_dependencies_py",
+      "community": 8,
       "norm_label": "dependencies.py"
     },
     {
       "label": "get_current_user()",
       "file_type": "code",
-      "source_file": "auth/dependencies.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/dependencies.py",
       "source_location": "L8",
       "id": "auth_dependencies_get_current_user",
-      "community": 4,
+      "community": 8,
       "norm_label": "get_current_user()"
     },
     {
       "label": "get_virtual_key()",
       "file_type": "code",
-      "source_file": "auth/dependencies.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/dependencies.py",
       "source_location": "L43",
       "id": "auth_dependencies_get_virtual_key",
-      "community": 0,
+      "community": 8,
       "norm_label": "get_virtual_key()"
     },
     {
       "label": "Extracts the Bearer token natively from the Authorization header,     validates",
       "file_type": "rationale",
-      "source_file": "auth/dependencies.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/dependencies.py",
       "source_location": "L12",
       "id": "auth_dependencies_rationale_12",
-      "community": 4,
+      "community": 8,
       "norm_label": "extracts the bearer token natively from the authorization header,     validates"
     },
     {
       "label": "Validates API requests using the lmr-xxx format.     Used ONLY for the /v1/chat/",
       "file_type": "rationale",
-      "source_file": "auth/dependencies.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/dependencies.py",
       "source_location": "L47",
       "id": "auth_dependencies_rationale_47",
-      "community": 0,
+      "community": 8,
       "norm_label": "validates api requests using the lmr-xxx format.     used only for the /v1/chat/"
     },
     {
       "label": "jwt_handler.py",
       "file_type": "code",
-      "source_file": "auth/jwt_handler.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/jwt_handler.py",
       "source_location": "L1",
-      "id": "auth_jwt_handler_py",
-      "community": 4,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_auth_jwt_handler_py",
+      "community": 1,
       "norm_label": "jwt_handler.py"
     },
     {
       "label": "create_token()",
       "file_type": "code",
-      "source_file": "auth/jwt_handler.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/jwt_handler.py",
       "source_location": "L15",
       "id": "auth_jwt_handler_create_token",
-      "community": 4,
+      "community": 1,
       "norm_label": "create_token()"
     },
     {
       "label": "decode_token()",
       "file_type": "code",
-      "source_file": "auth/jwt_handler.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/jwt_handler.py",
       "source_location": "L22",
       "id": "auth_jwt_handler_decode_token",
-      "community": 4,
+      "community": 1,
       "norm_label": "decode_token()"
     },
     {
       "label": "dispatcher.py",
       "file_type": "code",
-      "source_file": "core/dispatcher.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/dispatcher.py",
       "source_location": "L1",
-      "id": "core_dispatcher_py",
-      "community": 2,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_core_dispatcher_py",
+      "community": 11,
       "norm_label": "dispatcher.py"
     },
     {
       "label": "get_client()",
       "file_type": "code",
-      "source_file": "core/dispatcher.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/dispatcher.py",
       "source_location": "L7",
       "id": "core_dispatcher_get_client",
-      "community": 2,
+      "community": 11,
       "norm_label": "get_client()"
     },
     {
       "label": "dispatch_stream()",
       "file_type": "code",
-      "source_file": "core/dispatcher.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/dispatcher.py",
       "source_location": "L15",
       "id": "core_dispatcher_dispatch_stream",
-      "community": 2,
+      "community": 11,
       "norm_label": "dispatch_stream()"
     },
     {
       "label": "dispatch_sync()",
       "file_type": "code",
-      "source_file": "core/dispatcher.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/dispatcher.py",
       "source_location": "L28",
       "id": "core_dispatcher_dispatch_sync",
-      "community": 2,
+      "community": 11,
       "norm_label": "dispatch_sync()"
     },
     {
       "label": "feature_extractor.py",
       "file_type": "code",
-      "source_file": "core/feature_extractor.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/feature_extractor.py",
       "source_location": "L1",
-      "id": "core_feature_extractor_py",
-      "community": 2,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_core_feature_extractor_py",
+      "community": 4,
       "norm_label": "feature_extractor.py"
     },
     {
       "label": "extract_features()",
       "file_type": "code",
-      "source_file": "core/feature_extractor.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/feature_extractor.py",
       "source_location": "L24",
       "id": "core_feature_extractor_extract_features",
-      "community": 2,
+      "community": 4,
       "norm_label": "extract_features()"
     },
     {
       "label": "get_feature_vector()",
       "file_type": "code",
-      "source_file": "core/feature_extractor.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/feature_extractor.py",
       "source_location": "L96",
       "id": "core_feature_extractor_get_feature_vector",
-      "community": 2,
+      "community": 4,
       "norm_label": "get_feature_vector()"
     },
     {
       "label": "router.py",
       "file_type": "code",
-      "source_file": "core/router.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/router.py",
       "source_location": "L1",
-      "id": "core_router_py",
-      "community": 2,
+      "id": "home_nirmit_desktop_saferoute_sefaroute_core_router_py",
+      "community": 4,
       "norm_label": "router.py"
     },
     {
       "label": "load_models()",
       "file_type": "code",
-      "source_file": "core/router.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/router.py",
       "source_location": "L11",
       "id": "core_router_load_models",
-      "community": 2,
+      "community": 4,
       "norm_label": "load_models()"
     },
     {
       "label": "route_prompt()",
       "file_type": "code",
-      "source_file": "core/router.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/router.py",
       "source_location": "L23",
       "id": "core_router_route_prompt",
-      "community": 2,
+      "community": 4,
       "norm_label": "route_prompt()"
     },
     {
       "label": "crud.py",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L1",
-      "id": "db_crud_py",
+      "id": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
       "community": 0,
       "norm_label": "crud.py"
     },
     {
       "label": "get_fernet()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L10",
       "id": "db_crud_get_fernet",
       "community": 0,
@@ -475,7 +475,7 @@
     {
       "label": "encrypt()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L16",
       "id": "db_crud_encrypt",
       "community": 0,
@@ -484,7 +484,7 @@
     {
       "label": "decrypt()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L19",
       "id": "db_crud_decrypt",
       "community": 0,
@@ -493,7 +493,7 @@
     {
       "label": "hash_key()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L22",
       "id": "db_crud_hash_key",
       "community": 0,
@@ -502,7 +502,7 @@
     {
       "label": "create_user()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L25",
       "id": "db_crud_create_user",
       "community": 0,
@@ -511,7 +511,7 @@
     {
       "label": "get_user_by_email()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L32",
       "id": "db_crud_get_user_by_email",
       "community": 0,
@@ -520,16 +520,16 @@
     {
       "label": "get_user_by_id()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L36",
       "id": "db_crud_get_user_by_id",
-      "community": 4,
+      "community": 0,
       "norm_label": "get_user_by_id()"
     },
     {
       "label": "create_virtual_key()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L40",
       "id": "db_crud_create_virtual_key",
       "community": 0,
@@ -538,7 +538,7 @@
     {
       "label": "get_key_by_hash()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L70",
       "id": "db_crud_get_key_by_hash",
       "community": 0,
@@ -547,7 +547,7 @@
     {
       "label": "list_keys()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L74",
       "id": "db_crud_list_keys",
       "community": 0,
@@ -556,7 +556,7 @@
     {
       "label": "revoke_key()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L78",
       "id": "db_crud_revoke_key",
       "community": 0,
@@ -565,7 +565,7 @@
     {
       "label": "delete_key()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L87",
       "id": "db_crud_delete_key",
       "community": 0,
@@ -574,7 +574,7 @@
     {
       "label": "touch_key()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L96",
       "id": "db_crud_touch_key",
       "community": 0,
@@ -583,16 +583,16 @@
     {
       "label": "log_request()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L103",
       "id": "db_crud_log_request",
-      "community": 5,
+      "community": 0,
       "norm_label": "log_request()"
     },
     {
       "label": "get_stats()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L110",
       "id": "db_crud_get_stats",
       "community": 0,
@@ -601,7 +601,7 @@
     {
       "label": "get_request_logs()",
       "file_type": "code",
-      "source_file": "db/crud.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
       "source_location": "L165",
       "id": "db_crud_get_request_logs",
       "community": 0,
@@ -610,16 +610,16 @@
     {
       "label": "database.py",
       "file_type": "code",
-      "source_file": "db/database.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/database.py",
       "source_location": "L1",
-      "id": "db_database_py",
+      "id": "home_nirmit_desktop_saferoute_sefaroute_db_database_py",
       "community": 5,
       "norm_label": "database.py"
     },
     {
       "label": "Base",
       "file_type": "code",
-      "source_file": "db/database.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/database.py",
       "source_location": "L32",
       "id": "db_database_base",
       "community": 5,
@@ -637,7 +637,7 @@
     {
       "label": "get_db()",
       "file_type": "code",
-      "source_file": "db/database.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/database.py",
       "source_location": "L35",
       "id": "db_database_get_db",
       "community": 5,
@@ -646,19 +646,19 @@
     {
       "label": "models.py",
       "file_type": "code",
-      "source_file": "db/models.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/models.py",
       "source_location": "L1",
-      "id": "db_models_py",
+      "id": "home_nirmit_desktop_saferoute_sefaroute_db_models_py",
       "community": 5,
       "norm_label": "models.py"
     },
     {
       "label": "User",
       "file_type": "code",
-      "source_file": "db/models.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/models.py",
       "source_location": "L7",
       "id": "db_models_user",
-      "community": 1,
+      "community": 5,
       "norm_label": "user"
     },
     {
@@ -673,7 +673,7 @@
     {
       "label": "VirtualKey",
       "file_type": "code",
-      "source_file": "db/models.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/models.py",
       "source_location": "L16",
       "id": "db_models_virtualkey",
       "community": 5,
@@ -682,7 +682,7 @@
     {
       "label": "RequestLog",
       "file_type": "code",
-      "source_file": "db/models.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/models.py",
       "source_location": "L40",
       "id": "db_models_requestlog",
       "community": 5,
@@ -691,16 +691,16 @@
     {
       "label": "telemetry.py",
       "file_type": "code",
-      "source_file": "services/telemetry.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/services/telemetry.py",
       "source_location": "L1",
-      "id": "services_telemetry_py",
+      "id": "home_nirmit_desktop_saferoute_sefaroute_services_telemetry_py",
       "community": 6,
       "norm_label": "telemetry.py"
     },
     {
       "label": "capture_request()",
       "file_type": "code",
-      "source_file": "services/telemetry.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/services/telemetry.py",
       "source_location": "L11",
       "id": "services_telemetry_capture_request",
       "community": 6,
@@ -709,7 +709,7 @@
     {
       "label": "capture_error()",
       "file_type": "code",
-      "source_file": "services/telemetry.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/services/telemetry.py",
       "source_location": "L25",
       "id": "services_telemetry_capture_error",
       "community": 6,
@@ -718,11 +718,281 @@
     {
       "label": "README.md",
       "file_type": "document",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/README.md",
+      "source_location": "L1",
+      "id": "home_nirmit_desktop_saferoute_sefaroute_readme_md",
+      "community": 22,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "system_workflow.md",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L1",
+      "id": "docs_system_workflow_md",
+      "community": 3,
+      "norm_label": "system_workflow.md"
+    },
+    {
+      "label": "AI Ad Match \u2014 System Workflow",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L1",
+      "id": "docs_system_workflow_ai_ad_match_system_workflow",
+      "community": 3,
+      "norm_label": "ai ad match \u2014 system workflow"
+    },
+    {
+      "label": "High-Level Architecture",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L7",
+      "id": "docs_system_workflow_high_level_architecture",
+      "community": 3,
+      "norm_label": "high-level architecture"
+    },
+    {
+      "label": "code:mermaid (graph TD)",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L9",
+      "id": "docs_system_workflow_codeblock_1",
+      "community": 3,
+      "norm_label": "code:mermaid (graph td)"
+    },
+    {
+      "label": "Detailed Step-by-Step Pipeline",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L33",
+      "id": "docs_system_workflow_detailed_step_by_step_pipeline",
+      "community": 3,
+      "norm_label": "detailed step-by-step pipeline"
+    },
+    {
+      "label": "code:mermaid (flowchart TD)",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L35",
+      "id": "docs_system_workflow_codeblock_2",
+      "community": 3,
+      "norm_label": "code:mermaid (flowchart td)"
+    },
+    {
+      "label": "Data Structures",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L89",
+      "id": "docs_system_workflow_data_structures",
+      "community": 3,
+      "norm_label": "data structures"
+    },
+    {
+      "label": "Request Payload (`POST /api/personalize`)",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L91",
+      "id": "docs_system_workflow_request_payload_post_api_personalize",
+      "community": 3,
+      "norm_label": "request payload (`post /api/personalize`)"
+    },
+    {
+      "label": "Response Payload",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L99",
+      "id": "docs_system_workflow_response_payload",
+      "community": 3,
+      "norm_label": "response payload"
+    },
+    {
+      "label": "AI Model Details",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L111",
+      "id": "docs_system_workflow_ai_model_details",
+      "community": 3,
+      "norm_label": "ai model details"
+    },
+    {
+      "label": "Error Handling Paths",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L121",
+      "id": "docs_system_workflow_error_handling_paths",
+      "community": 3,
+      "norm_label": "error handling paths"
+    },
+    {
+      "label": "code:mermaid (flowchart LR)",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L123",
+      "id": "docs_system_workflow_codeblock_3",
+      "community": 3,
+      "norm_label": "code:mermaid (flowchart lr)"
+    },
+    {
+      "label": "Technology Layer Map",
+      "file_type": "document",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L138",
+      "id": "docs_system_workflow_technology_layer_map",
+      "community": 3,
+      "norm_label": "technology layer map"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "main.py",
+      "id": "main_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "api/__init__.py",
+      "source_location": "L1",
+      "community": 23,
+      "norm_label": "__init__.py",
+      "id": "api_init_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "api/v1/__init__.py",
+      "source_location": "L1",
+      "community": 24,
+      "norm_label": "__init__.py",
+      "id": "api_v1_init_py"
+    },
+    {
+      "label": "analytics.py",
+      "file_type": "code",
+      "source_file": "api/v1/analytics.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "analytics.py",
+      "id": "api_v1_analytics_py"
+    },
+    {
+      "label": "auth.py",
+      "file_type": "code",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "auth.py",
+      "id": "api_v1_auth_py"
+    },
+    {
+      "label": "chat.py",
+      "file_type": "code",
+      "source_file": "api/v1/chat.py",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "chat.py",
+      "id": "api_v1_chat_py"
+    },
+    {
+      "label": "keys.py",
+      "file_type": "code",
+      "source_file": "api/v1/keys.py",
+      "source_location": "L1",
+      "community": 7,
+      "norm_label": "keys.py",
+      "id": "api_v1_keys_py"
+    },
+    {
+      "label": "dependencies.py",
+      "file_type": "code",
+      "source_file": "auth/dependencies.py",
+      "source_location": "L1",
+      "community": 8,
+      "norm_label": "dependencies.py",
+      "id": "auth_dependencies_py"
+    },
+    {
+      "label": "jwt_handler.py",
+      "file_type": "code",
+      "source_file": "auth/jwt_handler.py",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "jwt_handler.py",
+      "id": "auth_jwt_handler_py"
+    },
+    {
+      "label": "dispatcher.py",
+      "file_type": "code",
+      "source_file": "core/dispatcher.py",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "dispatcher.py",
+      "id": "core_dispatcher_py"
+    },
+    {
+      "label": "feature_extractor.py",
+      "file_type": "code",
+      "source_file": "core/feature_extractor.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "feature_extractor.py",
+      "id": "core_feature_extractor_py"
+    },
+    {
+      "label": "router.py",
+      "file_type": "code",
+      "source_file": "core/router.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "router.py",
+      "id": "core_router_py"
+    },
+    {
+      "label": "crud.py",
+      "file_type": "code",
+      "source_file": "db/crud.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "crud.py",
+      "id": "db_crud_py"
+    },
+    {
+      "label": "database.py",
+      "file_type": "code",
+      "source_file": "db/database.py",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "database.py",
+      "id": "db_database_py"
+    },
+    {
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "db/models.py",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "models.py",
+      "id": "db_models_py"
+    },
+    {
+      "label": "telemetry.py",
+      "file_type": "code",
+      "source_file": "services/telemetry.py",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "telemetry.py",
+      "id": "services_telemetry_py"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "readme_md",
-      "community": 19,
-      "norm_label": "readme.md"
+      "community": 25,
+      "norm_label": "readme.md",
+      "id": "readme_md"
     },
     {
       "label": "lifespan",
@@ -733,7 +1003,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 18,
       "norm_label": "lifespan",
       "id": "main_lifespan"
     },
@@ -746,7 +1016,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 20,
+      "community": 26,
       "norm_label": "health",
       "id": "main_health"
     },
@@ -759,7 +1029,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 10,
+      "community": 13,
       "norm_label": "summary",
       "id": "analytics_summary"
     },
@@ -772,7 +1042,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 16,
       "norm_label": "requests",
       "id": "analytics_requests"
     },
@@ -785,7 +1055,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 21,
+      "community": 27,
       "norm_label": "daily",
       "id": "analytics_daily"
     },
@@ -798,7 +1068,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 12,
       "norm_label": "register",
       "id": "auth_register"
     },
@@ -811,7 +1081,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 12,
       "norm_label": "login",
       "id": "auth_login"
     },
@@ -824,7 +1094,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 22,
+      "community": 28,
       "norm_label": "me",
       "id": "auth_me"
     },
@@ -837,7 +1107,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "chat_completions",
       "id": "chat_chat_completions"
     },
@@ -850,7 +1120,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "_log",
       "id": "chat__log"
     },
@@ -863,7 +1133,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "_estimate_cost",
       "id": "chat__estimate_cost"
     },
@@ -876,7 +1146,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 9,
       "norm_label": "create_key",
       "id": "keys_create_key"
     },
@@ -889,7 +1159,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 17,
       "norm_label": "list_keys",
       "id": "keys_list_keys"
     },
@@ -902,7 +1172,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 19,
       "norm_label": "revoke_key",
       "id": "keys_revoke_key"
     },
@@ -915,7 +1185,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 11,
+      "community": 14,
       "norm_label": "get_current_user",
       "id": "dependencies_get_current_user"
     },
@@ -928,7 +1198,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 9,
       "norm_label": "get_virtual_key",
       "id": "dependencies_get_virtual_key"
     },
@@ -941,7 +1211,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 12,
       "norm_label": "create_token",
       "id": "jwt_handler_create_token"
     },
@@ -954,7 +1224,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 11,
+      "community": 14,
       "norm_label": "decode_token",
       "id": "jwt_handler_decode_token"
     },
@@ -967,7 +1237,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "get_client",
       "id": "dispatcher_get_client"
     },
@@ -980,7 +1250,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "dispatch_stream",
       "id": "dispatcher_dispatch_stream"
     },
@@ -993,7 +1263,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "dispatch_sync",
       "id": "dispatcher_dispatch_sync"
     },
@@ -1006,7 +1276,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "extract_features",
       "id": "feature_extractor_extract_features"
     },
@@ -1019,7 +1289,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "get_feature_vector",
       "id": "feature_extractor_get_feature_vector"
     },
@@ -1032,7 +1302,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 18,
       "norm_label": "load_models",
       "id": "router_load_models"
     },
@@ -1045,7 +1315,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "route_prompt",
       "id": "router_route_prompt"
     },
@@ -1058,7 +1328,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 9,
       "norm_label": "encrypt",
       "id": "crud_encrypt"
     },
@@ -1071,7 +1341,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "decrypt",
       "id": "crud_decrypt"
     },
@@ -1084,7 +1354,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 9,
       "norm_label": "hash_key",
       "id": "crud_hash_key"
     },
@@ -1097,7 +1367,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 12,
       "norm_label": "create_user",
       "id": "crud_create_user"
     },
@@ -1110,7 +1380,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 12,
       "norm_label": "get_user_by_email",
       "id": "crud_get_user_by_email"
     },
@@ -1123,7 +1393,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 11,
+      "community": 14,
       "norm_label": "get_user_by_id",
       "id": "crud_get_user_by_id"
     },
@@ -1136,7 +1406,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 9,
       "norm_label": "create_virtual_key",
       "id": "crud_create_virtual_key"
     },
@@ -1149,7 +1419,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 9,
       "norm_label": "get_key_by_hash",
       "id": "crud_get_key_by_hash"
     },
@@ -1162,7 +1432,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 17,
       "norm_label": "list_keys",
       "id": "crud_list_keys"
     },
@@ -1175,7 +1445,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 19,
       "norm_label": "revoke_key",
       "id": "crud_revoke_key"
     },
@@ -1188,7 +1458,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "touch_key",
       "id": "crud_touch_key"
     },
@@ -1201,7 +1471,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "log_request",
       "id": "crud_log_request"
     },
@@ -1214,7 +1484,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 10,
+      "community": 13,
       "norm_label": "get_stats",
       "id": "crud_get_stats"
     },
@@ -1227,7 +1497,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 16,
       "norm_label": "get_request_logs",
       "id": "crud_get_request_logs"
     },
@@ -1240,7 +1510,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 15,
       "norm_label": "user",
       "id": "models_User"
     },
@@ -1253,7 +1523,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 15,
       "norm_label": "virtualkey",
       "id": "models_VirtualKey"
     },
@@ -1266,7 +1536,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 15,
       "norm_label": "requestlog",
       "id": "models_RequestLog"
     },
@@ -1279,7 +1549,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "capture_request",
       "id": "telemetry_capture_request"
     },
@@ -1292,7 +1562,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 23,
+      "community": 29,
       "norm_label": "capture_error",
       "id": "telemetry_capture_error"
     },
@@ -1306,7 +1576,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Using python for simplicity since this is a college project.",
-      "community": 10,
+      "community": 13,
       "norm_label": "python-side stats aggregation",
       "id": "crud_python_stats_aggregation"
     },
@@ -1320,7 +1590,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Cost saved is mocked using a fixed factor as requested by simple analysis.",
-      "community": 10,
+      "community": 13,
       "norm_label": "mock cost-saved calculation",
       "id": "crud_cost_saved_mock_factor"
     },
@@ -1334,7 +1604,7 @@
       "author": null,
       "contributor": null,
       "rationale": "PostHog telemetry is configured without collecting raw prompts.",
-      "community": 3,
+      "community": 2,
       "norm_label": "telemetry without raw prompts",
       "id": "telemetry_no_raw_prompts"
     },
@@ -1347,12 +1617,43 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 24,
+      "community": 30,
       "norm_label": "render service config for saferoute",
       "id": "render_service_saferoute"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/main.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_main_py",
+      "target": "sefaroute_main_lifespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/main.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_main_py",
+      "target": "sefaroute_main_health",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "main.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "sefaroute_main_lifespan",
+      "target": "core_router_load_models"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1374,15 +1675,34 @@
       "target": "sefaroute_main_health"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "main.py",
-      "source_location": "L13",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/analytics.py",
+      "source_location": "L14",
       "weight": 1.0,
-      "source": "sefaroute_main_lifespan",
-      "target": "core_router_load_models"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_analytics_py",
+      "target": "v1_analytics_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/analytics.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_analytics_py",
+      "target": "v1_analytics_requests",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/analytics.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_analytics_py",
+      "target": "v1_analytics_daily",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1417,72 +1737,72 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L14",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_auth_py",
-      "target": "v1_auth_registerrequest"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
+      "target": "v1_auth_registerrequest",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L19",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_auth_py",
-      "target": "v1_auth_loginrequest"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
+      "target": "v1_auth_loginrequest",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_auth_py",
-      "target": "v1_auth_userpublic"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
+      "target": "v1_auth_userpublic",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L28",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_auth_py",
-      "target": "v1_auth_authresponse"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
+      "target": "v1_auth_authresponse",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L33",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_auth_py",
-      "target": "v1_auth_register"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
+      "target": "v1_auth_register",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L59",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_auth_py",
-      "target": "v1_auth_login"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
+      "target": "v1_auth_login",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/auth.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/auth.py",
       "source_location": "L79",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_auth_py",
-      "target": "v1_auth_me"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_auth_py",
+      "target": "v1_auth_me",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -1493,6 +1813,16 @@
       "confidence_score": 1.0,
       "source": "v1_auth_registerrequest",
       "target": "basemodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_auth_py",
+      "target": "v1_auth_registerrequest"
     },
     {
       "relation": "uses",
@@ -1565,6 +1895,16 @@
       "target": "basemodel"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_auth_py",
+      "target": "v1_auth_loginrequest"
+    },
+    {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "api/v1/auth.py",
@@ -1575,6 +1915,16 @@
       "target": "db_models_user"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_auth_py",
+      "target": "v1_auth_userpublic"
+    },
+    {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "api/v1/auth.py",
@@ -1583,6 +1933,16 @@
       "confidence_score": 0.5,
       "source": "v1_auth_userpublic",
       "target": "db_models_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_auth_py",
+      "target": "v1_auth_authresponse"
     },
     {
       "relation": "uses",
@@ -1606,6 +1966,16 @@
       "target": "auth_jwt_handler_create_token"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_auth_py",
+      "target": "v1_auth_register"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -1619,32 +1989,52 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/chat.py",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_auth_py",
+      "target": "v1_auth_login"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/auth.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_auth_py",
+      "target": "v1_auth_me"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/chat.py",
       "source_location": "L18",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_chat_py",
-      "target": "v1_chat_chat_completions"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_chat_py",
+      "target": "v1_chat_chat_completions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/chat.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/chat.py",
       "source_location": "L91",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_chat_py",
-      "target": "v1_chat_log"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_chat_py",
+      "target": "v1_chat_log",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/v1/chat.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/chat.py",
       "source_location": "L139",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_v1_chat_py",
-      "target": "v1_chat_estimate_cost"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_chat_py",
+      "target": "v1_chat_estimate_cost",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1667,6 +2057,16 @@
       "weight": 1.0,
       "source": "v1_chat_chat_completions",
       "target": "core_dispatcher_dispatch_sync"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/chat.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_chat_py",
+      "target": "v1_chat_chat_completions"
     },
     {
       "relation": "calls",
@@ -1693,12 +2093,112 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "api/v1/chat.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_chat_py",
+      "target": "v1_chat_log"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/v1/chat.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_v1_chat_py",
+      "target": "v1_chat_estimate_cost"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "target": "v1_keys_keycreaterequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "target": "v1_keys_keycreateresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "target": "v1_keys_keyrevokerequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "target": "v1_keys_create_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "target": "v1_keys_list_keys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "target": "v1_keys_revoke_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/api/v1/keys.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_api_v1_keys_py",
+      "target": "v1_keys_delete_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "api/v1/keys.py",
       "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "api_v1_keys_py",
       "target": "v1_keys_keycreaterequest"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "api/v1/keys.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "v1_keys_keycreaterequest",
+      "target": "db_models_user"
     },
     {
       "relation": "contains",
@@ -1711,6 +2211,16 @@
       "target": "v1_keys_keycreateresponse"
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "api/v1/keys.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "v1_keys_keycreateresponse",
+      "target": "db_models_user"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "api/v1/keys.py",
@@ -1719,6 +2229,16 @@
       "confidence_score": 1.0,
       "source": "api_v1_keys_py",
       "target": "v1_keys_keyrevokerequest"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "api/v1/keys.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "v1_keys_keyrevokerequest",
+      "target": "db_models_user"
     },
     {
       "relation": "contains",
@@ -1756,59 +2276,29 @@
       "source_file": "api/v1/keys.py",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_v1_keys_py",
-      "target": "v1_keys_delete_key",
+      "target": "v1_keys_delete_key"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/dependencies.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_auth_dependencies_py",
+      "target": "auth_dependencies_get_current_user",
       "confidence_score": 1.0
     },
     {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "api/v1/keys.py",
-      "source_location": "L7",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "v1_keys_keycreaterequest",
-      "target": "db_models_user"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "api/v1/keys.py",
-      "source_location": "L7",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "v1_keys_keycreateresponse",
-      "target": "db_models_user"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "api/v1/keys.py",
-      "source_location": "L7",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "v1_keys_keyrevokerequest",
-      "target": "db_models_user"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "auth/dependencies.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "auth_dependencies_py",
-      "target": "auth_dependencies_get_current_user"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "auth/dependencies.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/dependencies.py",
       "source_location": "L43",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "auth_dependencies_py",
-      "target": "auth_dependencies_get_virtual_key"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_auth_dependencies_py",
+      "target": "auth_dependencies_get_virtual_key",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1841,6 +2331,16 @@
       "weight": 1.0,
       "source": "auth_dependencies_get_current_user",
       "target": "db_crud_get_user_by_id"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "auth/dependencies.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_dependencies_py",
+      "target": "auth_dependencies_get_current_user"
     },
     {
       "relation": "rationale_for",
@@ -1877,6 +2377,36 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "auth/dependencies.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_dependencies_py",
+      "target": "auth_dependencies_get_virtual_key"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/jwt_handler.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_auth_jwt_handler_py",
+      "target": "auth_jwt_handler_create_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/auth/jwt_handler.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_auth_jwt_handler_py",
+      "target": "auth_jwt_handler_decode_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "auth/jwt_handler.py",
       "source_location": "L13",
       "weight": 1.0,
@@ -1897,32 +2427,32 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "core/dispatcher.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/dispatcher.py",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_dispatcher_py",
-      "target": "core_dispatcher_get_client"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_core_dispatcher_py",
+      "target": "core_dispatcher_get_client",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "core/dispatcher.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/dispatcher.py",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_dispatcher_py",
-      "target": "core_dispatcher_dispatch_stream"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_core_dispatcher_py",
+      "target": "core_dispatcher_dispatch_stream",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "core/dispatcher.py",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/dispatcher.py",
       "source_location": "L28",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_dispatcher_py",
-      "target": "core_dispatcher_dispatch_sync"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_core_dispatcher_py",
+      "target": "core_dispatcher_dispatch_sync",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1960,22 +2490,52 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "core/feature_extractor.py",
-      "source_location": "L24",
+      "source_file": "core/dispatcher.py",
+      "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "core_feature_extractor_py",
-      "target": "core_feature_extractor_extract_features"
+      "source": "core_dispatcher_py",
+      "target": "core_dispatcher_get_client"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "core/feature_extractor.py",
-      "source_location": "L96",
+      "source_file": "core/dispatcher.py",
+      "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "core_feature_extractor_py",
-      "target": "core_feature_extractor_get_feature_vector"
+      "source": "core_dispatcher_py",
+      "target": "core_dispatcher_dispatch_stream"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "core/dispatcher.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_dispatcher_py",
+      "target": "core_dispatcher_dispatch_sync"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/feature_extractor.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_core_feature_extractor_py",
+      "target": "core_feature_extractor_extract_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/feature_extractor.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_core_feature_extractor_py",
+      "target": "core_feature_extractor_get_feature_vector",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1989,6 +2549,16 @@
       "target": "core_feature_extractor_extract_features"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "core/feature_extractor.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_feature_extractor_py",
+      "target": "core_feature_extractor_extract_features"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -1998,6 +2568,36 @@
       "weight": 1.0,
       "source": "core_router_route_prompt",
       "target": "core_feature_extractor_get_feature_vector"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "core/feature_extractor.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_feature_extractor_py",
+      "target": "core_feature_extractor_get_feature_vector"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/router.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_core_router_py",
+      "target": "core_router_load_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/core/router.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_core_router_py",
+      "target": "core_router_route_prompt",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2022,12 +2622,205 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_get_fernet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_encrypt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_decrypt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_hash_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_create_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_get_user_by_email",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_get_user_by_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_create_virtual_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_get_key_by_hash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_list_keys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_revoke_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_delete_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_touch_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_log_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_get_stats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/crud.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_crud_py",
+      "target": "db_crud_get_request_logs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "db/crud.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_crud_encrypt",
+      "target": "db_crud_get_fernet"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "db/crud.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_crud_decrypt",
+      "target": "db_crud_get_fernet"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "db/crud.py",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "db_crud_py",
       "target": "db_crud_get_fernet"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "db/crud.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_crud_create_virtual_key",
+      "target": "db_crud_encrypt"
     },
     {
       "relation": "contains",
@@ -2050,6 +2843,17 @@
       "target": "db_crud_decrypt"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "db/crud.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_crud_create_virtual_key",
+      "target": "db_crud_hash_key"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "db/crud.py",
@@ -2058,6 +2862,17 @@
       "confidence_score": 1.0,
       "source": "db_crud_py",
       "target": "db_crud_hash_key"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "db/crud.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "db_crud_create_user",
+      "target": "db_models_user"
     },
     {
       "relation": "contains",
@@ -2088,6 +2903,17 @@
       "confidence_score": 1.0,
       "source": "db_crud_py",
       "target": "db_crud_get_user_by_id"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "db/crud.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "db_crud_create_virtual_key",
+      "target": "db_models_virtualkey"
     },
     {
       "relation": "contains",
@@ -2135,9 +2961,9 @@
       "source_file": "db/crud.py",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "db_crud_py",
-      "target": "db_crud_delete_key",
-      "confidence_score": 1.0
+      "target": "db_crud_delete_key"
     },
     {
       "relation": "contains",
@@ -2148,6 +2974,17 @@
       "confidence_score": 1.0,
       "source": "db_crud_py",
       "target": "db_crud_touch_key"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "db/crud.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "db_crud_log_request",
+      "target": "db_models_requestlog"
     },
     {
       "relation": "contains",
@@ -2180,81 +3017,34 @@
       "target": "db_crud_get_request_logs"
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "db/crud.py",
-      "source_location": "L17",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/database.py",
+      "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "db_crud_encrypt",
-      "target": "db_crud_get_fernet"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_database_py",
+      "target": "db_database_base",
+      "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "db/crud.py",
-      "source_location": "L20",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/database.py",
+      "source_location": "L35",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "db_crud_decrypt",
-      "target": "db_crud_get_fernet"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_database_py",
+      "target": "db_database_get_db",
+      "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "db/crud.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "db_crud_create_virtual_key",
-      "target": "db_crud_encrypt"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "db/crud.py",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "db_crud_create_virtual_key",
-      "target": "db_crud_hash_key"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "db/crud.py",
+      "source_file": "db/database.py",
       "source_location": "L25",
       "weight": 1.0,
-      "source": "db_crud_create_user",
-      "target": "db_models_user"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "db/crud.py",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "db_crud_create_virtual_key",
-      "target": "db_models_virtualkey"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "db/crud.py",
-      "source_location": "L94",
-      "weight": 1.0,
-      "source": "db_crud_log_request",
-      "target": "db_models_requestlog"
+      "confidence_score": 1.0,
+      "source": "db_database_base",
+      "target": "declarativebase"
     },
     {
       "relation": "contains",
@@ -2264,6 +3054,36 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "db_database_py",
+      "target": "db_database_base"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "db/models.py",
+      "source_location": "L5",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "db_models_user",
+      "target": "db_database_base"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "db/models.py",
+      "source_location": "L5",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "db_models_virtualkey",
+      "target": "db_database_base"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "db/models.py",
+      "source_location": "L5",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "db_models_requestlog",
       "target": "db_database_base"
     },
     {
@@ -2277,44 +3097,44 @@
       "target": "db_database_get_db"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/models.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_models_py",
+      "target": "db_models_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/models.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_models_py",
+      "target": "db_models_virtualkey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/db/models.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "home_nirmit_desktop_saferoute_sefaroute_db_models_py",
+      "target": "db_models_requestlog",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "db/database.py",
-      "source_location": "L25",
+      "source_file": "db/models.py",
+      "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "db_database_base",
-      "target": "declarativebase"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "db/models.py",
-      "source_location": "L5",
-      "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "db_models_user",
-      "target": "db_database_base"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "db/models.py",
-      "source_location": "L5",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "db_models_virtualkey",
-      "target": "db_database_base"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "db/models.py",
-      "source_location": "L5",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "db_models_requestlog",
-      "target": "db_database_base"
+      "target": "base"
     },
     {
       "relation": "contains",
@@ -2325,6 +3145,26 @@
       "confidence_score": 1.0,
       "source": "db_models_py",
       "target": "db_models_user"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "db/models.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_models_virtualkey",
+      "target": "base"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "db/models.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_models_requestlog",
+      "target": "base"
     },
     {
       "relation": "contains",
@@ -2347,34 +3187,24 @@
       "target": "db_models_requestlog"
     },
     {
-      "relation": "inherits",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "db/models.py",
-      "source_location": "L7",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/services/telemetry.py",
+      "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "db_models_user",
-      "target": "base"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_services_telemetry_py",
+      "target": "services_telemetry_capture_request",
+      "confidence_score": 1.0
     },
     {
-      "relation": "inherits",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "db/models.py",
-      "source_location": "L16",
+      "source_file": "/home/nirmit/Desktop/SafeRoute/sefaRoute/services/telemetry.py",
+      "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "db_models_virtualkey",
-      "target": "base"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "db/models.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "db_models_requestlog",
-      "target": "base"
+      "source": "home_nirmit_desktop_saferoute_sefaroute_services_telemetry_py",
+      "target": "services_telemetry_capture_error",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2395,6 +3225,126 @@
       "confidence_score": 1.0,
       "source": "services_telemetry_py",
       "target": "services_telemetry_capture_error"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_system_workflow_md",
+      "target": "docs_system_workflow_ai_ad_match_system_workflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "docs_system_workflow_ai_ad_match_system_workflow",
+      "target": "docs_system_workflow_high_level_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "docs_system_workflow_ai_ad_match_system_workflow",
+      "target": "docs_system_workflow_detailed_step_by_step_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "docs_system_workflow_ai_ad_match_system_workflow",
+      "target": "docs_system_workflow_data_structures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "docs_system_workflow_ai_ad_match_system_workflow",
+      "target": "docs_system_workflow_ai_model_details",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "docs_system_workflow_ai_ad_match_system_workflow",
+      "target": "docs_system_workflow_error_handling_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "docs_system_workflow_ai_ad_match_system_workflow",
+      "target": "docs_system_workflow_technology_layer_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "docs_system_workflow_high_level_architecture",
+      "target": "docs_system_workflow_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "docs_system_workflow_detailed_step_by_step_pipeline",
+      "target": "docs_system_workflow_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "docs_system_workflow_data_structures",
+      "target": "docs_system_workflow_request_payload_post_api_personalize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "docs_system_workflow_data_structures",
+      "target": "docs_system_workflow_response_payload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/system_workflow.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "docs_system_workflow_error_handling_paths",
+      "target": "docs_system_workflow_codeblock_3",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2775,5 +3725,5 @@
       "source_file": "api/v1/auth.py"
     }
   ],
-  "built_at_commit": "1ac6e4f74f9b660b4910e833ef7f2197115b19f1"
+  "built_at_commit": "dc4451ca3cada82d54f1e36079960986cd6422cb"
 }
