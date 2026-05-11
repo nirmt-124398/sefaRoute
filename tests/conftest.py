@@ -4,6 +4,8 @@ import os
 from pathlib import Path
 import httpx
 import pytest
+import pytest_asyncio
+import uuid
 from dotenv import load_dotenv
 
 from tests.config import load_config
@@ -59,7 +61,7 @@ def json_report_path(report_dir: Path) -> Path:
     return report_dir / "pytest-report.json"
 
 
-@pytest.fixture(scope="session")
+@pytest_asyncio.fixture(scope="session")
 async def client(cfg):
     async with httpx.AsyncClient(base_url=cfg.base_url) as c:
         yield c
@@ -71,18 +73,62 @@ def _wire_pytest_json_report(json_report_path: Path) -> None:
     os.environ.setdefault("PYTEST_JSON_REPORT_FILE", str(json_report_path))
 
 
-@pytest.fixture(scope="session")
-def jwt_headers(cfg) -> dict[str, str]:
-    if not cfg.jwt_token:
-        pytest.skip("TEST_JWT not set")
-    return {"Authorization": f"Bearer {cfg.jwt_token}"}
+@pytest_asyncio.fixture(scope="session")
+async def auth_context(cfg, client) -> dict[str, str]:
+    if cfg.jwt_token:
+        return {"token": cfg.jwt_token, "email": "", "password": ""}
+
+    email = f"test_{uuid.uuid4().hex[:12]}@example.com"
+    password = "Password123!"
+    register = await client.post(
+        "/auth/register",
+        json={"email": email, "username": "testuser", "password": password},
+    )
+    if register.status_code == 200:
+        token = register.json().get("token")
+        return {"token": token, "email": email, "password": password}
+
+    login = await client.post("/auth/login", json={"email": email, "password": password})
+    if login.status_code == 200:
+        token = login.json().get("token")
+        return {"token": token, "email": email, "password": password}
+
+    pytest.fail(f"Unable to register or login test user. register={register.status_code} login={login.status_code}")
+    return {"token": "", "email": "", "password": ""}
 
 
-@pytest.fixture(scope="session")
-def vkey_headers(cfg) -> dict[str, str]:
-    if not cfg.virtual_key:
-        pytest.skip("TEST_VIRTUAL_KEY not set")
-    return {"Authorization": f"Bearer {cfg.virtual_key}"}
+@pytest_asyncio.fixture(scope="session")
+async def jwt_headers(auth_context) -> dict[str, str]:
+    token = auth_context.get("token")
+    if not token:
+        pytest.skip("TEST_JWT not set and auth setup failed")
+    return {"Authorization": f"Bearer {token}"}
+
+
+@pytest_asyncio.fixture(scope="session")
+async def vkey_headers(cfg, client, jwt_headers) -> dict[str, str]:
+    if cfg.virtual_key:
+        return {"Authorization": f"Bearer {cfg.virtual_key}"}
+
+    payload = {
+        "name": "test-key",
+        "weak_model": "gpt-4o-mini",
+        "weak_api_key": "sk-test-weak",
+        "weak_base_url": "https://example.com",
+        "mid_model": "gpt-4o-mini",
+        "mid_api_key": "sk-test-mid",
+        "mid_base_url": "https://example.com",
+        "strong_model": "gpt-4o-mini",
+        "strong_api_key": "sk-test-strong",
+        "strong_base_url": "https://example.com",
+    }
+    created = await client.post("/keys/create", headers=jwt_headers, json=payload)
+    if created.status_code != 200:
+        pytest.skip(f"Unable to create virtual key: {created.status_code}")
+    raw_key = created.json().get("key")
+    if not raw_key:
+        pytest.skip("Virtual key missing from response")
+    return {"Authorization": f"Bearer {raw_key}"}
 
 
 @pytest.fixture(scope="session")

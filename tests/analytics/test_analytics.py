@@ -27,3 +27,11 @@ async def test_analytics_requests(jwt_headers, client):
     call = await api_call(client, "GET", "/analytics/requests?limit=5&offset=0", headers=jwt_headers)
     assert call.status_code == 200
     assert isinstance(call.response_json, list)
+
+
+@pytest.mark.integration
+@pytest.mark.asyncio
+async def test_analytics_daily(jwt_headers, client):
+    call = await api_call(client, "GET", "/analytics/daily?days=1", headers=jwt_headers)
+    assert call.status_code == 200
+    assert isinstance(call.response_json, list)

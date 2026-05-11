@@ -17,7 +17,7 @@ def main() -> int:
     report_file = report_dir / "pytest-report.json"
 
     cmd = [
-        "python",
+        sys.executable,
         "-m",
         "pytest",
         "tests",
