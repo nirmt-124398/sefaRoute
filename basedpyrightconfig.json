@@ -1,0 +1,14 @@
+{
+  "venvPath": "/home/nirmit",
+  "venv": "sefaRoute/.venv",
+  "pythonVersion": "3.13",
+  "typeCheckingMode": "basic",
+  "exclude": [".venv", "graphify-out", "**/__pycache__"],
+  "reportMissingImports": false,
+  "reportUnknownMemberType": false,
+  "reportUnknownVariableType": false,
+  "reportUnknownParameterType": false,
+  "reportUnknownArgumentType": false,
+  "reportMissingParameterType": false,
+  "reportUntypedFunctionDecorator": false
+}
