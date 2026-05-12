@@ -1,22 +1,35 @@
+import asyncio
+import os
+import subprocess
 from contextlib import asynccontextmanager, suppress
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
-from sqlalchemy import text
-from sqlalchemy.schema import CreateSchema
 
 from api.v1 import auth, keys, chat, analytics, users
 from core import router as router_mod
-from db.database import engine, Base, DB_SCHEMA
 from services.error_tracking import init_sentry
+
+
+def _run_alembic_upgrade() -> None:
+    """Run alembic upgrade head in a subprocess to avoid event loop conflicts."""
+    project_dir = os.path.dirname(os.path.abspath(__file__))
+    venv_python = os.path.join(project_dir, ".venv", "bin", "python3")
+    result = subprocess.run(
+        [venv_python, "-c", "from alembic.config import main; main()", "upgrade", "head"],
+        capture_output=True, text=True,
+        cwd=project_dir,
+    )
+    if result.returncode != 0:
+        msg = result.stderr.strip() or result.stdout.strip()
+        raise RuntimeError(f"Alembic migration failed:\n{msg}")
+    if result.stdout.strip():
+        print(f"[alembic] {result.stdout.strip()}", flush=True)
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    async with engine.begin() as conn:
-        if DB_SCHEMA:
-            await conn.execute(CreateSchema(DB_SCHEMA, if_not_exists=True))
-            await conn.execute(text(f"SET search_path TO {DB_SCHEMA}"))
-        await conn.run_sync(Base.metadata.create_all)
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(None, _run_alembic_upgrade)
     router_mod.load_models()
     init_sentry()
     yield
