@@ -10,7 +10,7 @@ from core.router import route_prompt
 from db.database import get_db
 from db.models import VirtualKey
 from db import crud
-from services.telemetry import capture_request
+from services.telemetry import capture_request, capture_error
 from core.dependencies import rate_limit_chat
 
 router = APIRouter()
@@ -60,6 +60,7 @@ async def chat_completions(
             except Exception as e:
                 status = "error"
                 error_msg = str(e)
+                capture_error(str(virtual_key.user_id), str(e), {"tier": routing["tier"], "stream": True})
                 yield f"data: {json.dumps({'error': str(e)})}\n\n"
             finally:
                 latency_ms = int((time.time() - start) * 1000)
@@ -87,6 +88,7 @@ async def chat_completions(
         )
         return result
     except Exception as e:
+        capture_error(str(virtual_key.user_id), str(e), {"tier": routing["tier"]})
         raise HTTPException(status_code=502, detail=str(e))
 
 

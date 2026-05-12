@@ -1,11 +1,13 @@
-from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from contextlib import asynccontextmanager, suppress
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from sqlalchemy.schema import CreateSchema
 
 from api.v1 import auth, keys, chat, analytics, users
-from core.router import load_models, CLASSIFIER
+from core import router as router_mod
 from db.database import engine, Base, DB_SCHEMA
+from services.error_tracking import init_sentry
 
 
 @asynccontextmanager
@@ -13,10 +15,10 @@ async def lifespan(app: FastAPI):
     async with engine.begin() as conn:
         if DB_SCHEMA:
             await conn.execute(CreateSchema(DB_SCHEMA, if_not_exists=True))
-            # Execute SET search_path without parameter binding which fails in asyncpg/PostgreSQL
             await conn.execute(text(f"SET search_path TO {DB_SCHEMA}"))
         await conn.run_sync(Base.metadata.create_all)
-    load_models()
+    router_mod.load_models()
+    init_sentry()
     yield
 
 
@@ -35,4 +37,24 @@ app.include_router(users.router, prefix="/users", tags=["Users"])
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "model_loaded": CLASSIFIER is not None}
+    return {"status": "ok", "model_loaded": router_mod.CLASSIFIER is not None}
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    """Catch unhandled 500s — send to Sentry + PostHog, return JSON."""
+    if isinstance(exc, HTTPException):
+        raise exc
+
+    with suppress(Exception):
+        import sentry_sdk
+        sentry_sdk.capture_exception(exc)
+
+    with suppress(Exception):
+        from services.telemetry import capture_error
+        capture_error("unknown", str(exc), {"path": str(request.url)})
+
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "An internal error occurred"},
+    )

@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends
+from core.dependencies import rate_limit_api
 from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -7,7 +8,7 @@ from db.database import get_db
 from db.models import User
 from db import crud
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(rate_limit_api)])
 
 class KeyCreateRequest(BaseModel):
     name: str = Field(min_length=1)

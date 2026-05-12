@@ -15,11 +15,15 @@ from sklearn.dummy import DummyClassifier, DummyRegressor
 # We need to reset the module globals before each test.
 @pytest.fixture(autouse=True)
 def _reset_router_globals():
-    """Reset CLASSIFIER and REGRESSOR to None before each test."""
+    """Reset CLASSIFIER and REGRESSOR before/after each test."""
     import core.router as router_mod
+    saved_clf = router_mod.CLASSIFIER
+    saved_reg = router_mod.REGRESSOR
     router_mod.CLASSIFIER = None
     router_mod.REGRESSOR = None
     yield
+    router_mod.CLASSIFIER = saved_clf
+    router_mod.REGRESSOR = saved_reg
 
 
 class TestLoadModels:
@@ -38,10 +42,10 @@ class TestLoadModels:
         diff = router_mod.REGRESSOR.predict([features])[0]
         assert isinstance(diff, (float, np.floating))
 
-    def test_raises_on_missing_classifier(self):
-        """Raises RuntimeError when classifier model file is missing."""
+    def test_graceful_when_classifier_missing(self):
+        """Sets CLASSIFIER to None instead of crashing when file is missing."""
         from core.router import load_models
-        # Monkeypatch os.path.exists to return False for classifier
+        import core.router as router_mod
         original_exists = os.path.exists
 
         def fake_exists(path):
@@ -50,12 +54,13 @@ class TestLoadModels:
             return original_exists(path)
 
         with patch.object(os.path, "exists", side_effect=fake_exists):
-            with pytest.raises(RuntimeError, match="Model files missing"):
-                load_models()
+            load_models()
+            assert router_mod.CLASSIFIER is None
 
-    def test_raises_on_missing_regressor(self):
-        """Raises RuntimeError when regressor model file is missing."""
+    def test_graceful_when_regressor_missing(self):
+        """Sets REGRESSOR to None instead of crashing when file is missing."""
         from core.router import load_models
+        import core.router as router_mod
         original_exists = os.path.exists
 
         def fake_exists(path):
@@ -64,8 +69,8 @@ class TestLoadModels:
             return original_exists(path)
 
         with patch.object(os.path, "exists", side_effect=fake_exists):
-            with pytest.raises(RuntimeError, match="Model files missing"):
-                load_models()
+            load_models()
+            assert router_mod.REGRESSOR is None
 
 
 class TestRoutePrompt:
