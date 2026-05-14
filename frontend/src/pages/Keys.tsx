@@ -1,0 +1,527 @@
+import { useState, useEffect, useCallback } from "react"
+import { useNavigate } from "react-router-dom"
+import { listKeys, createKey, revokeKey, listNvidiaModels, type VirtualKey, type CreateKeyPayload } from "@/api/keys"
+import { ApiError } from "@/api/client"
+import { useAuth } from "@/context/AuthContext"
+import { Button } from "@/components/ui/Button"
+import { Input } from "@/components/ui/Input"
+import { Badge } from "@/components/ui/Badge"
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+} from "@/components/ui/Table"
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/Dialog"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/Select"
+import { Card, CardContent } from "@/components/ui/Card"
+import { Key, Plus, Copy, Check, Trash2, AlertCircle, Loader2 } from "lucide-react"
+
+const DEFAULT_NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1"
+
+const defaultForm: CreateKeyPayload = {
+  name: "",
+  weak_model: "",
+  weak_api_key: "",
+  weak_base_url: "",
+  mid_model: "",
+  mid_api_key: "",
+  mid_base_url: "",
+  strong_model: "",
+  strong_api_key: "",
+  strong_base_url: "",
+}
+
+export default function Keys() {
+  const { loading: authLoading } = useAuth()
+  const navigate = useNavigate()
+  const [keys, setKeys] = useState<VirtualKey[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
+  const [dialogOpen, setDialogOpen] = useState(false)
+  const [form, setForm] = useState<CreateKeyPayload>(defaultForm)
+  const [submitting, setSubmitting] = useState(false)
+  const [formError, setFormError] = useState("")
+  const [createdKey, setCreatedKey] = useState<string | null>(null)
+  const [copied, setCopied] = useState(false)
+  const [revoking, setRevoking] = useState<string | null>(null)
+
+  const [nvidiaApiKey, setNvidiaApiKey] = useState("")
+  const [nvidiaBaseUrl, setNvidiaBaseUrl] = useState(DEFAULT_NVIDIA_BASE_URL)
+  const [nvidiaModels, setNvidiaModels] = useState<string[]>([])
+  const [loadingModels, setLoadingModels] = useState(false)
+  const [modelsError, setModelsError] = useState("")
+
+  const fetchKeys = useCallback(() => {
+    setLoading(true)
+    setError("")
+    listKeys()
+      .then(setKeys)
+      .catch((err: unknown) => {
+        if (err instanceof ApiError && err.status === 401) {
+          navigate("/login", { replace: true })
+          return
+        }
+        setError(err instanceof Error ? err.message : "Failed to load keys")
+      })
+      .finally(() => setLoading(false))
+  }, [navigate])
+
+  useEffect(() => {
+    if (authLoading) return
+    fetchKeys()
+  }, [authLoading, fetchKeys])
+
+  async function handleLoadModels() {
+    if (!nvidiaApiKey) {
+      setModelsError("NVIDIA API Key is required.")
+      return
+    }
+    if (!nvidiaBaseUrl) {
+      setModelsError("Base URL is required.")
+      return
+    }
+    setLoadingModels(true)
+    setModelsError("")
+    setNvidiaModels([])
+    try {
+      const result = await listNvidiaModels({
+        api_key: nvidiaApiKey,
+        base_url: nvidiaBaseUrl,
+      })
+      setNvidiaModels(result.models)
+      setForm((prev) => ({
+        ...prev,
+        weak_api_key: nvidiaApiKey,
+        weak_base_url: nvidiaBaseUrl,
+        mid_api_key: nvidiaApiKey,
+        mid_base_url: nvidiaBaseUrl,
+        strong_api_key: nvidiaApiKey,
+        strong_base_url: nvidiaBaseUrl,
+      }))
+    } catch (err: unknown) {
+      setModelsError(err instanceof Error ? err.message : "Failed to load models")
+    } finally {
+      setLoadingModels(false)
+    }
+  }
+
+  async function handleCreate(e: React.FormEvent) {
+    e.preventDefault()
+    setFormError("")
+    if (!form.name) {
+      setFormError("Key name is required.")
+      return
+    }
+    if (!form.weak_model || !form.mid_model || !form.strong_model) {
+      setFormError("Please select a model for each tier.")
+      return
+    }
+    setSubmitting(true)
+    try {
+      const result = await createKey(form)
+      setCreatedKey(result.key)
+
+      // Store key locally for Chat playground usage
+      try {
+        const stored = JSON.parse(localStorage.getItem("created_keys") || "{}")
+        stored[result.key_id] = { key: result.key, name: result.name }
+        localStorage.setItem("created_keys", JSON.stringify(stored))
+      } catch { /* ignore storage errors */ }
+
+      setForm(defaultForm)
+      fetchKeys()
+    } catch (err: unknown) {
+      setFormError(err instanceof Error ? err.message : "Failed to create key")
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  async function handleRevoke(keyId: string) {
+    if (!window.confirm("Revoke this API key? This action cannot be undone.")) return
+    setRevoking(keyId)
+    try {
+      await revokeKey(keyId)
+      fetchKeys()
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Failed to revoke key"
+      alert(msg)
+    } finally {
+      setRevoking(null)
+    }
+  }
+
+  function handleCopy(key: string) {
+    navigator.clipboard.writeText(key)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  function handleCloseDialog() {
+    setDialogOpen(false)
+    setCreatedKey(null)
+    setForm(defaultForm)
+    setFormError("")
+    setNvidiaApiKey("")
+    setNvidiaBaseUrl(DEFAULT_NVIDIA_BASE_URL)
+    setNvidiaModels([])
+    setModelsError("")
+  }
+
+  function updateField(field: keyof CreateKeyPayload, value: string) {
+    setForm((prev) => ({ ...prev, [field]: value }))
+  }
+
+  if (loading) {
+    return (
+      <div className="space-y-4 animate-pulse">
+        <div className="flex items-center justify-between">
+          <div className="h-8 w-32 rounded bg-brand-lightgray" />
+          <div className="h-10 w-28 rounded bg-brand-lightgray" />
+        </div>
+        <Card>
+          <CardContent className="p-6">
+            <div className="space-y-4">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div key={i} className="h-6 rounded bg-brand-lightgray" />
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-center">
+        <div className="mb-4 rounded-full bg-red-50 p-3">
+          <AlertCircle className="h-6 w-6 text-red-500" />
+        </div>
+        <h3 className="font-heading text-base font-semibold text-brand-dark">
+          Failed to load keys
+        </h3>
+        <p className="mt-1 text-sm text-brand-mid font-body">{error}</p>
+        <Button variant="outline" className="mt-4" onClick={fetchKeys}>
+          Try again
+        </Button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-sm text-brand-mid font-body">
+            Manage your virtual API keys
+          </p>
+        </div>
+        <Dialog open={dialogOpen} onOpenChange={(open) => {
+          if (!open) handleCloseDialog()
+          else setDialogOpen(true)
+        }}>
+          <DialogTrigger asChild>
+            <Button>
+              <Plus className="h-4 w-4" />
+              Create Key
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-h-[85vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Create Virtual Key</DialogTitle>
+              <DialogDescription>
+                Configure routing tiers and provider credentials.
+              </DialogDescription>
+            </DialogHeader>
+
+            {createdKey ? (
+              <div className="space-y-4">
+                <div className="rounded-sm border border-brand-green/30 bg-brand-green/5 p-4">
+                  <p className="text-sm font-heading font-semibold text-brand-green">
+                    Key Created Successfully
+                  </p>
+                  <p className="mt-1 text-xs text-brand-mid font-body">
+                    Copy this key now. You will not be able to see it again.
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <code className="flex-1 truncate rounded-sm border border-brand-lightgray bg-brand-light px-3 py-2 font-mono text-xs">
+                    {createdKey}
+                  </code>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => handleCopy(createdKey)}
+                  >
+                    {copied ? (
+                      <Check className="h-4 w-4 text-brand-green" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
+                <Button className="w-full" onClick={handleCloseDialog}>
+                  Done
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleCreate} className="space-y-4">
+                {formError && (
+                  <div className="rounded-sm border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600 font-body">
+                    {formError}
+                  </div>
+                )}
+
+                <Input
+                  id="key-name"
+                  label="Key Name"
+                  placeholder="My API Key"
+                  value={form.name}
+                  onChange={(e) => updateField("name", e.target.value)}
+                />
+
+                <div className="rounded-sm border border-brand-lightgray p-3 space-y-3">
+                  <p className="text-xs font-heading font-medium uppercase tracking-wider text-brand-mid">
+                    NVIDIA NIM Credentials
+                  </p>
+
+                  <Input
+                    id="nvidia-api-key"
+                    label="NVIDIA API Key"
+                    placeholder="nvapi-..."
+                    type="password"
+                    value={nvidiaApiKey}
+                    onChange={(e) => setNvidiaApiKey(e.target.value)}
+                  />
+
+                  <Input
+                    id="nvidia-base-url"
+                    label="Base URL"
+                    placeholder="https://integrate.api.nvidia.com/v1"
+                    value={nvidiaBaseUrl}
+                    onChange={(e) => {
+                      setNvidiaBaseUrl(e.target.value)
+                      setNvidiaModels([])
+                    }}
+                  />
+
+                  {modelsError && (
+                    <p className="text-xs text-red-500 font-body">{modelsError}</p>
+                  )}
+
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleLoadModels}
+                    disabled={loadingModels}
+                    className="w-full"
+                  >
+                    {loadingModels ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Loading Models…
+                      </>
+                    ) : nvidiaModels.length > 0 ? (
+                      "Reload Models"
+                    ) : (
+                      "Load Models"
+                    )}
+                  </Button>
+
+                  {nvidiaModels.length > 0 && (
+                    <p className="text-xs text-brand-mid font-body">
+                      {nvidiaModels.length} models available
+                    </p>
+                  )}
+                </div>
+
+                {nvidiaModels.length > 0 && (
+                  <>
+                    <div className="space-y-1">
+                      <p className="text-xs font-heading font-medium uppercase tracking-wider text-brand-mid">
+                        Weak Tier
+                      </p>
+                      <div className="grid grid-cols-1 gap-2">
+                        <Select
+                          value={form.weak_model}
+                          onValueChange={(val) => updateField("weak_model", val)}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a model" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {nvidiaModels.map((m) => (
+                              <SelectItem key={m} value={m}>
+                                {m}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p className="text-xs font-heading font-medium uppercase tracking-wider text-brand-mid">
+                        Mid Tier
+                      </p>
+                      <div className="grid grid-cols-1 gap-2">
+                        <Select
+                          value={form.mid_model}
+                          onValueChange={(val) => updateField("mid_model", val)}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a model" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {nvidiaModels.map((m) => (
+                              <SelectItem key={m} value={m}>
+                                {m}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p className="text-xs font-heading font-medium uppercase tracking-wider text-brand-mid">
+                        Strong Tier
+                      </p>
+                      <div className="grid grid-cols-1 gap-2">
+                        <Select
+                          value={form.strong_model}
+                          onValueChange={(val) => updateField("strong_model", val)}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a model" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {nvidiaModels.map((m) => (
+                              <SelectItem key={m} value={m}>
+                                {m}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                <div className="flex justify-end gap-2 pt-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleCloseDialog}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={submitting || nvidiaModels.length === 0}
+                  >
+                    {submitting ? "Creating…" : "Create Key"}
+                  </Button>
+                </div>
+              </form>
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
+
+      {keys.length === 0 ? (
+        <div className="flex flex-col items-center justify-center py-20 text-center">
+          <div className="mb-4 rounded-full bg-brand-lightgray p-3">
+            <Key className="h-6 w-6 text-brand-mid" />
+          </div>
+          <h3 className="font-heading text-base font-semibold text-brand-dark">
+            No keys yet
+          </h3>
+          <p className="mt-1 text-sm text-brand-mid font-body">
+            Create your first virtual key to start routing requests.
+          </p>
+        </div>
+      ) : (
+        <Card>
+          <CardContent className="p-0">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Name</TableHead>
+                  <TableHead>Weak</TableHead>
+                  <TableHead>Mid</TableHead>
+                  <TableHead>Strong</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Created</TableHead>
+                  <TableHead>Last Used</TableHead>
+                  <TableHead className="text-right">Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {keys.map((k) => (
+                  <TableRow key={k.key_id}>
+                    <TableCell className="font-heading font-medium">
+                      {k.name}
+                    </TableCell>
+                    <TableCell className="text-brand-mid text-xs font-mono max-w-[120px] truncate">
+                      {k.weak_model}
+                    </TableCell>
+                    <TableCell className="text-brand-mid text-xs font-mono max-w-[120px] truncate">
+                      {k.mid_model}
+                    </TableCell>
+                    <TableCell className="text-brand-mid text-xs font-mono max-w-[120px] truncate">
+                      {k.strong_model}
+                    </TableCell>
+                    <TableCell>
+                      <Badge variant={k.is_active ? "success" : "destructive"}>
+                        {k.is_active ? "Active" : "Revoked"}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="text-brand-mid text-xs whitespace-nowrap">
+                      {new Date(k.created_at).toLocaleDateString()}
+                    </TableCell>
+                    <TableCell className="text-brand-mid text-xs whitespace-nowrap">
+                      {k.last_used_at
+                        ? new Date(k.last_used_at).toLocaleDateString()
+                        : "—"}
+                    </TableCell>
+                    <TableCell className="text-right">
+                      {k.is_active && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => handleRevoke(k.key_id)}
+                          disabled={revoking === k.key_id}
+                          className="text-red-500 hover:text-red-600 hover:bg-red-50"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      )}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  )
+}

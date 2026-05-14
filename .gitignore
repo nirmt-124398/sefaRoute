@@ -10,3 +10,4 @@ wheels/
 .venv
 .env
 .sisyphus
+/node_modules

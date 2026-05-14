@@ -1,4 +1,6 @@
-from fastapi import APIRouter, Depends
+import re
+import httpx
+from fastapi import APIRouter, Depends, HTTPException
 from core.dependencies import rate_limit_api
 from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -29,6 +31,59 @@ class KeyCreateResponse(BaseModel):
 
 class KeyRevokeRequest(BaseModel):
     key_id: str
+
+class NvidiaModelsRequest(BaseModel):
+    api_key: str = Field(min_length=1)
+    base_url: str = Field(min_length=1)
+
+class NvidiaModelsResponse(BaseModel):
+    models: list[str]
+
+@router.post("/nvidia/models", response_model=NvidiaModelsResponse)
+async def list_nvidia_models(
+    payload: NvidiaModelsRequest,
+    _current_user: User = Depends(get_current_user),
+):
+    headers = {"Authorization": f"Bearer {payload.api_key}"}
+    url = payload.base_url.rstrip("/") + "/models"
+
+    async with httpx.AsyncClient(timeout=15.0) as client:
+        try:
+            resp = await client.get(url, headers=headers)
+            resp.raise_for_status()
+        except httpx.HTTPStatusError as e:
+            raise HTTPException(
+                status_code=e.response.status_code,
+                detail=f"NVIDIA API error: {e.response.text}",
+            )
+        except httpx.RequestError as e:
+            raise HTTPException(
+                status_code=502,
+                detail=f"Failed to reach NVIDIA endpoint: {e}",
+            )
+
+    data = resp.json()
+
+    def is_valid_model(m: dict) -> bool:
+        if not isinstance(m, dict) or "id" not in m:
+            return False
+        obj = m.get("object")
+        if obj is not None:
+            return obj == "model"
+        return not bool(re.fullmatch(
+            r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+            m["id"],
+        ))
+
+    models = sorted(
+        m["id"] for m in data.get("data", []) if is_valid_model(m)
+    )
+    if not models:
+        raise HTTPException(
+            status_code=502,
+            detail="No models returned from NVIDIA endpoint. Check your base URL and API key.",
+        )
+    return NvidiaModelsResponse(models=models)
 
 @router.post("/create", response_model=KeyCreateResponse)
 async def create_key(
