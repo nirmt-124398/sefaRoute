@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { listKeys, type VirtualKey } from "@/api/keys"
-import { streamChatMessage, type ChatMessage } from "@/api/chat"
+import { streamChatMessage, type ChatMessage, type ChatChunk } from "@/api/chat"
 
 interface ChatMessageDisplay extends ChatMessage {
   tierLabel?: string
@@ -56,7 +56,7 @@ export default function Chat() {
   const [input, setInput] = useState("")
   const [sending, setSending] = useState(false)
   const [error, setError] = useState("")
-  const [lastRouting, setLastRouting] = useState<{ tier: number; confidence: number } | null>(null)
+  const [lastRouting, setLastRouting] = useState<ChatChunk["x-llmrouter"]>(undefined)
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
@@ -114,7 +114,7 @@ export default function Chat() {
     setInput("")
     setSending(true)
     setError("")
-    setLastRouting(null)
+    setLastRouting(undefined)
 
     const allMessages = [...messages, userMsg]
 
@@ -123,7 +123,6 @@ export default function Chat() {
       let firstChunk = true
       let currentTierLabel = ""
       let currentModelName = ""
-      const tierLabels = ["weak", "mid", "strong"]
       for await (const chunk of streamChatMessage(rawKey, allMessages)) {
         if ("error" in chunk) {
           setError(`Backend error: ${chunk.error}`)
@@ -132,8 +131,9 @@ export default function Chat() {
         if (firstChunk && chunk["x-llmrouter"]) {
           setLastRouting(chunk["x-llmrouter"])
           firstChunk = false
-          const tierNum = chunk["x-llmrouter"].tier
-          currentTierLabel = tierLabels[tierNum] ?? "unknown"
+          const routing = chunk["x-llmrouter"]
+          currentTierLabel = routing.tier_name ?? "unknown"
+          const tierNum = routing.tier
           const selected = keys.find(k => k.key_id === selectedKey)
           if (selected) {
             if (tierNum === 0) currentModelName = selected.weak_model
@@ -415,7 +415,7 @@ export default function Chat() {
               <div className="flex items-center gap-2 text-xs">
                 <span className="text-brand-mid font-body">Routed to:</span>
                 <span
-                  className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-white ${
+                  className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-white capitalize ${
                     lastRouting.tier === 0 ? "bg-yellow-500"
                     : lastRouting.tier === 1 ? "bg-blue-500"
                     : "bg-purple-500"
@@ -425,7 +425,7 @@ export default function Chat() {
                     : lastRouting.tier === 1 ? <Cpu className="h-3 w-3" />
                     : <Sparkles className="h-3 w-3" />
                   }
-                  {lastRouting.tier === 0 ? "Weak" : lastRouting.tier === 1 ? "Mid" : "Strong"}
+                  {lastRouting.tier_name}
                 </span>
                 <span className="text-brand-mid font-body">
                   ({(lastRouting.confidence * 100).toFixed(0)}% confidence)

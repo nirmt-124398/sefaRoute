@@ -27,8 +27,10 @@ export interface ChatResponse {
   }
   "x-llmrouter"?: {
     tier: number
+    tier_name: string
     confidence: number
-    reason: string
+    difficulty_score: number
+    upgraded: boolean
   }
 }
 
@@ -44,8 +46,10 @@ export interface ChatChunk {
   }>
   "x-llmrouter"?: {
     tier: number
+    tier_name: string
     confidence: number
-    reason: string
+    difficulty_score: number
+    upgraded: boolean
   }
 }
 

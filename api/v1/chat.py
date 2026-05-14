@@ -49,6 +49,11 @@ async def chat_completions(
                 )
                 first = True
                 async for chunk in stream_obj:
+                    if chunk.usage is not None:
+                        usage = {
+                            "input_tokens": chunk.usage.prompt_tokens,
+                            "output_tokens": chunk.usage.completion_tokens,
+                        }
                     if first:
                         chunk_dict = chunk.model_dump()
                         chunk_dict["x-llmrouter"] = routing

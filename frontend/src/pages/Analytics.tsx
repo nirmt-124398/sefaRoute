@@ -424,7 +424,7 @@ export default function Analytics() {
                         </TableCell>
                         <TableCell>
                           <Badge variant="secondary" className="text-xs">
-                            {["", "Weak", "Mid", "Strong"][r.tier_assigned] ?? r.tier_assigned}
+                            {["Weak", "Mid", "Strong"][r.tier_assigned] ?? r.tier_assigned}
                           </Badge>
                         </TableCell>
                         <TableCell className="text-xs tabular-nums">
