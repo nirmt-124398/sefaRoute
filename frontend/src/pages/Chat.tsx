@@ -2,13 +2,40 @@ import { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { listKeys, type VirtualKey } from "@/api/keys"
 import { streamChatMessage, type ChatMessage } from "@/api/chat"
+
+interface ChatMessageDisplay extends ChatMessage {
+  tierLabel?: string
+  modelName?: string
+}
 import { ApiError } from "@/api/client"
 import { useAuth } from "@/context/AuthContext"
+import "highlight.js/styles/github-dark.css"
+import ReactMarkdown from "react-markdown"
+import rehypeHighlight from "rehype-highlight"
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/Input"
 import { Card, CardContent } from "@/components/ui/Card"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/Select"
-import { Send, Loader2, Bot, User, Sparkles, Zap, Cpu, KeyRound } from "lucide-react"
+import { Send, Loader2, Bot, User, Sparkles, Zap, Cpu, KeyRound, Trash2, Copy, Check } from "lucide-react"
+
+const CHAT_STORAGE_KEY = "chat_messages"
+
+function loadMessages(): ChatMessageDisplay[] {
+  try {
+    const raw = localStorage.getItem(CHAT_STORAGE_KEY)
+    return raw ? JSON.parse(raw) : []
+  } catch {
+    return []
+  }
+}
+
+function saveMessages(messages: ChatMessageDisplay[]) {
+  try {
+    localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages))
+  } catch {
+    // quota exceeded — silently ignore
+  }
+}
 
 function getStoredKey(keyId: string): string | null {
   try {
@@ -25,11 +52,12 @@ export default function Chat() {
   const [keys, setKeys] = useState<VirtualKey[]>([])
   const [selectedKey, setSelectedKey] = useState<string>("")
   const [manualKey, setManualKey] = useState("")
-  const [messages, setMessages] = useState<ChatMessage[]>([])
+  const [messages, setMessages] = useState<ChatMessageDisplay[]>(loadMessages())
   const [input, setInput] = useState("")
   const [sending, setSending] = useState(false)
   const [error, setError] = useState("")
   const [lastRouting, setLastRouting] = useState<{ tier: number; confidence: number } | null>(null)
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -49,6 +77,15 @@ export default function Chat() {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages])
+
+  useEffect(() => {
+    const handleBeforeUnload = () => saveMessages(messages)
+    window.addEventListener("beforeunload", handleBeforeUnload)
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload)
+      saveMessages(messages)
+    }
   }, [messages])
 
   function resolveKey(): string | null {
@@ -84,6 +121,9 @@ export default function Chat() {
     try {
       let content = ""
       let firstChunk = true
+      let currentTierLabel = ""
+      let currentModelName = ""
+      const tierLabels = ["weak", "mid", "strong"]
       for await (const chunk of streamChatMessage(rawKey, allMessages)) {
         if ("error" in chunk) {
           setError(`Backend error: ${chunk.error}`)
@@ -92,6 +132,14 @@ export default function Chat() {
         if (firstChunk && chunk["x-llmrouter"]) {
           setLastRouting(chunk["x-llmrouter"])
           firstChunk = false
+          const tierNum = chunk["x-llmrouter"].tier
+          currentTierLabel = tierLabels[tierNum] ?? "unknown"
+          const selected = keys.find(k => k.key_id === selectedKey)
+          if (selected) {
+            if (tierNum === 0) currentModelName = selected.weak_model
+            else if (tierNum === 1) currentModelName = selected.mid_model
+            else if (tierNum === 2) currentModelName = selected.strong_model
+          }
         }
         if (chunk.choices?.[0]?.delta?.content) {
           content += chunk.choices[0].delta.content
@@ -99,9 +147,9 @@ export default function Chat() {
             const updated = [...prev]
             const last = updated[updated.length - 1]
             if (last && last.role === "assistant") {
-              updated[updated.length - 1] = { role: "assistant", content }
+              updated[updated.length - 1] = { role: "assistant", content, tierLabel: currentTierLabel, modelName: currentModelName }
             } else {
-              updated.push({ role: "assistant", content })
+              updated.push({ role: "assistant", content, tierLabel: currentTierLabel, modelName: currentModelName })
             }
             return updated
           })
@@ -119,6 +167,10 @@ export default function Chat() {
       }
     } finally {
       setSending(false)
+      setMessages(prev => {
+        saveMessages(prev)
+        return prev
+      })
     }
   }
 
@@ -130,6 +182,16 @@ export default function Chat() {
       if (getStoredKey(selectedKey)) return true
     }
     return false
+  }
+
+  async function copyMessage(content: string, index: number) {
+    try {
+      await navigator.clipboard.writeText(content)
+      setCopiedIndex(index)
+      setTimeout(() => setCopiedIndex(null), 2000)
+    } catch {
+      // Clipboard API not available or permission denied — silently ignore
+    }
   }
 
   if (authLoading) {
@@ -164,6 +226,19 @@ export default function Chat() {
             Send prompts to test the intelligent routing engine
           </p>
         </div>
+        {messages.length > 0 && (
+          <button
+            onClick={() => {
+              setMessages([])
+              localStorage.removeItem(CHAT_STORAGE_KEY)
+            }}
+            className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm text-brand-mid hover:text-red-600 hover:bg-red-50 transition-colors font-body"
+            title="Clear chat"
+          >
+            <Trash2 className="h-4 w-4" />
+            Clear Chat
+          </button>
+        )}
       </div>
 
       <Card className="flex-1 overflow-hidden">
@@ -194,13 +269,70 @@ export default function Chat() {
                     }
                   </div>
                   <div
-                    className={`max-w-[70%] rounded-lg px-4 py-2 ${
+                    className={`group flex max-w-[70%] flex-col gap-1 ${
                       msg.role === "user"
-                        ? "bg-brand-orange text-white"
-                        : "bg-brand-light text-brand-dark"
+                        ? "items-end"
+                        : "items-start"
                     }`}
                   >
-                    <p className="whitespace-pre-wrap font-body text-sm">{msg.content}</p>
+                    <div
+                      className={`w-full rounded-lg px-4 py-2 ${
+                        msg.role === "user"
+                          ? "bg-brand-orange text-white"
+                          : "bg-brand-light text-brand-dark"
+                      }`}
+                    >
+                      {msg.role === "assistant" && msg.tierLabel && (
+                        <div className="mb-1.5 flex items-center gap-1.5">
+                          <span
+                            className={`inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider font-heading ${
+                              msg.tierLabel === "weak"
+                                ? "bg-green-100 text-green-700"
+                                : msg.tierLabel === "mid"
+                                  ? "bg-yellow-100 text-yellow-700"
+                                  : "bg-red-100 text-red-700"
+                            }`}
+                          >
+                            {msg.tierLabel}
+                          </span>
+                          {msg.modelName && (
+                            <span className="text-[11px] text-brand-mid font-mono truncate max-w-[200px]">
+                              {msg.modelName}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                      <div
+                        className={
+                          msg.role === "user"
+                            ? "font-body text-sm space-y-2 [&_p]:leading-relaxed [&_code]:rounded [&_code]:bg-white/20 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_pre]:mb-3 [&_pre]:mt-2 [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-gray-900 [&_pre]:p-4 [&_pre]:text-sm [&_pre]:leading-relaxed [&_pre]:text-gray-100 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-1 [&_h1]:mb-2 [&_h1]:text-xl [&_h1]:font-bold [&_h2]:mb-2 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mb-1 [&_h3]:text-base [&_h3]:font-semibold [&_a]:text-blue-200 [&_a]:underline [&_a:hover]:text-blue-100 [&_blockquote]:border-l-4 [&_blockquote]:border-white/40 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-white/80 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:border-white/30 [&_th]:px-3 [&_th]:py-1.5 [&_th]:bg-white/10 [&_th]:text-left [&_td]:border [&_td]:border-white/30 [&_td]:px-3 [&_td]:py-1.5 [&_hr]:my-3 [&_hr]:border-white/30 [&_img]:max-w-full [&_img]:rounded"
+                            : "font-body text-sm space-y-2 [&_p]:leading-relaxed [&_code]:rounded [&_code]:bg-gray-100 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_pre]:mb-3 [&_pre]:mt-2 [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-gray-900 [&_pre]:p-4 [&_pre]:text-sm [&_pre]:leading-relaxed [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-1 [&_h1]:mb-2 [&_h1]:text-xl [&_h1]:font-bold [&_h2]:mb-2 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mb-1 [&_h3]:text-base [&_h3]:font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a:hover]:text-blue-800 [&_blockquote]:border-l-4 [&_blockquote]:border-gray-300 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-gray-600 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:border-gray-300 [&_th]:px-3 [&_th]:py-1.5 [&_th]:bg-gray-100 [&_th]:text-left [&_td]:border [&_td]:border-gray-300 [&_td]:px-3 [&_td]:py-1.5 [&_hr]:my-3 [&_hr]:border-gray-300 [&_img]:max-w-full [&_img]:rounded"
+                        }
+                      >
+                        <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+                          {msg.content}
+                        </ReactMarkdown>
+                      </div>
+                    </div>
+                    {msg.role === "assistant" && (
+                      <button
+                        onClick={() => copyMessage(msg.content, i)}
+                        className="ml-1 flex items-center gap-1 text-xs text-brand-mid hover:text-brand-dark transition-colors"
+                        title="Copy message"
+                      >
+                        {copiedIndex === i ? (
+                          <>
+                            <Check className="h-3.5 w-3.5 text-green-500" />
+                            <span className="text-green-500">Copied</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="h-3.5 w-3.5" />
+                            <span>Copy</span>
+                          </>
+                        )}
+                      </button>
+                    )}
                   </div>
                 </div>
               ))
