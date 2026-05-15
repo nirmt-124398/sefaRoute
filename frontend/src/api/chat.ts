@@ -31,6 +31,7 @@ export interface ChatResponse {
     confidence: number
     difficulty_score: number
     upgraded: boolean
+    rerouted: boolean
   }
 }
 
@@ -50,6 +51,7 @@ export interface ChatChunk {
     confidence: number
     difficulty_score: number
     upgraded: boolean
+    rerouted: boolean
   }
 }
 

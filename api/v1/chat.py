@@ -44,24 +44,35 @@ async def chat_completions(
             model_used = None
 
             try:
-                stream_obj, model_used = await dispatch_stream(
-                    messages, virtual_key, routing["tier"]
-                )
-                first = True
-                async for chunk in stream_obj:
-                    if chunk.usage is not None:
-                        usage = {
-                            "input_tokens": chunk.usage.prompt_tokens,
-                            "output_tokens": chunk.usage.completion_tokens,
-                        }
-                    if first:
-                        chunk_dict = chunk.model_dump()
-                        chunk_dict["x-llmrouter"] = routing
-                        yield f"data: {json.dumps(chunk_dict)}\n\n"
-                        first = False
-                    else:
-                        yield f"data: {chunk.model_dump_json()}\n\n"
-                yield "data: [DONE]\n\n"
+                for attempt in ([routing["tier"]] if routing["tier"] == 0 else [routing["tier"], 0]):
+                    try:
+                        stream_obj, model_used = await dispatch_stream(
+                            messages, virtual_key, attempt
+                        )
+                        if attempt != routing["tier"]:
+                            routing["tier"] = attempt
+                            routing["tier_name"] = "weak"
+                            routing["rerouted"] = True
+                        first = True
+                        async for chunk in stream_obj:
+                            if chunk.usage is not None:
+                                usage = {
+                                    "input_tokens": chunk.usage.prompt_tokens,
+                                    "output_tokens": chunk.usage.completion_tokens,
+                                }
+                            if first:
+                                chunk_dict = chunk.model_dump()
+                                chunk_dict["x-llmrouter"] = routing
+                                yield f"data: {json.dumps(chunk_dict)}\n\n"
+                                first = False
+                            else:
+                                yield f"data: {chunk.model_dump_json()}\n\n"
+                        yield "data: [DONE]\n\n"
+                        break
+                    except Exception:
+                        if attempt != 0:
+                            continue
+                        raise
             except Exception as e:
                 status = "error"
                 error_msg = str(e)
@@ -80,21 +91,32 @@ async def chat_completions(
         response, model_used = await dispatch_sync(
             messages, virtual_key, routing["tier"]
         )
-        latency_ms = int((time.time() - start) * 1000)
-        result = response.model_dump()
-        result["x-llmrouter"] = routing
-        background_tasks.add_task(
-            _log, db, virtual_key, prompt, routing, model_used,
-            {
-                "input_tokens": response.usage.prompt_tokens if response.usage else None,
-                "output_tokens": response.usage.completion_tokens if response.usage else None,
-            },
-            latency_ms, "success", None
-        )
-        return result
-    except Exception as e:
-        capture_error(str(virtual_key.user_id), str(e), {"tier": routing["tier"]})
-        raise HTTPException(status_code=502, detail=str(e))
+    except Exception as original_error:
+        if routing["tier"] != 0:
+            try:
+                routing["tier"] = 0
+                routing["tier_name"] = "weak"
+                routing["rerouted"] = True
+                response, model_used = await dispatch_sync(
+                    messages, virtual_key, 0
+                )
+            except Exception:
+                raise HTTPException(status_code=502, detail=str(original_error))
+        else:
+            raise HTTPException(status_code=502, detail=str(original_error))
+
+    latency_ms = int((time.time() - start) * 1000)
+    result = response.model_dump()
+    result["x-llmrouter"] = routing
+    background_tasks.add_task(
+        _log, db, virtual_key, prompt, routing, model_used,
+        {
+            "input_tokens": response.usage.prompt_tokens if response.usage else None,
+            "output_tokens": response.usage.completion_tokens if response.usage else None,
+        },
+        latency_ms, "success", None
+    )
+    return result
 
 
 async def _log(

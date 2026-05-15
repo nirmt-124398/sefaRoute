@@ -72,6 +72,7 @@ def _heuristic_route(prompt: str) -> dict:
         "confidence"      : 0.5,
         "difficulty_score": round(difficulty, 4),
         "upgraded"        : False,
+        "rerouted"        : False,
     }
 
 
@@ -104,4 +105,5 @@ def route_prompt(prompt: str) -> dict:
         "confidence"      : round(confidence, 4),
         "difficulty_score": round(difficulty, 4),
         "upgraded"        : upgraded,
+        "rerouted"        : False,
     }
